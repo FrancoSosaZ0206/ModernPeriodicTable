@@ -6,9 +6,9 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "utilities.h"
-#include "Element.h"
-#include "PeriodicTable.h"
+#include "Libraries/utilities.h"
+#include "Libraries/Element.h"
+#include "Libraries/PeriodicTable.h"
 
 int main()
 {

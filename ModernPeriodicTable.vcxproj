@@ -127,21 +127,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Element.c" />
-    <ClCompile Include="List.c" />
-    <ClCompile Include="main.c" />
-    <ClCompile Include="Node.c" />
-    <ClCompile Include="PeriodicTable.c" />
-    <ClCompile Include="utilities.c" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Element.h" />
-    <ClInclude Include="List.h" />
-    <ClInclude Include="Node.h" />
-    <ClInclude Include="PeriodicTable.h" />
-    <ClInclude Include="utilities.h" />
-  </ItemGroup>
-  <ItemGroup>
     <Text Include="Resources\Planning and Management\futureImprovements.txt" />
     <Text Include="Resources\Planning and Management\implementation.txt" />
     <Text Include="Resources\Planning and Management\ProjRequirements.txt" />
@@ -153,6 +138,21 @@
   <ItemGroup>
     <Image Include="Resources\References\Periodic_table_large-es-updated-2018.jpg" />
     <Image Include="Resources\References\tabla-periodica-elementos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Libraries\Element.h" />
+    <ClInclude Include="Libraries\List.h" />
+    <ClInclude Include="Libraries\Node.h" />
+    <ClInclude Include="Libraries\PeriodicTable.h" />
+    <ClInclude Include="Libraries\utilities.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Libraries\Element.c" />
+    <ClCompile Include="Libraries\List.c" />
+    <ClCompile Include="Libraries\Node.c" />
+    <ClCompile Include="Libraries\PeriodicTable.c" />
+    <ClCompile Include="Libraries\utilities.c" />
+    <ClCompile Include="main.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

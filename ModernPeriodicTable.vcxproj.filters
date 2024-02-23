@@ -24,43 +24,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.c">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="Element.c">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="Node.c">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="List.c">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="PeriodicTable.c">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="utilities.c">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Element.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="List.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="Node.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="PeriodicTable.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="utilities.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
     <Text Include="Resources\Planning and Management\futureImprovements.txt">
       <Filter>Archivos de recursos\Planning and Management</Filter>
     </Text>
@@ -86,5 +49,42 @@
     <Image Include="Resources\References\tabla-periodica-elementos.png">
       <Filter>Archivos de recursos\References</Filter>
     </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Libraries\Element.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="Libraries\List.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="Libraries\Node.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="Libraries\PeriodicTable.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="Libraries\utilities.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.c">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="Libraries\Element.c">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="Libraries\List.c">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="Libraries\Node.c">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="Libraries\PeriodicTable.c">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="Libraries\utilities.c">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
