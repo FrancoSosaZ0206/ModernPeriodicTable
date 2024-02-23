@@ -1,0 +1,12 @@
+Requirements:
+	- Built-in elements (so user doesn't have to manually add them every time they run the program)
+		* Maybe in a separate file, so you can load them into the project only if you want to (specifying file path)
+	- Saving changes to a file (serialization - so that it's easily readable)
+	- Reading info from file (deserialization)
+	- Possibility to add/remove elements
+	- Search element by any of its main properties (atomic number, mass, letter, name, etc.)
+	- Show functions (with some neat indentation and color for easier readability)
+		- Show element with all its properties
+		- Show list of given elements
+		- Show list of all elements loaded
+	- Edit element properties

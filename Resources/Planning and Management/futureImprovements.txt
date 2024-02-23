@@ -1,0 +1,42 @@
+- Instead of doing a separate list of lanthanides and actinides, we can
+  just put those lists in their respective nodes inside the main Element list.
+
+- Colored text capabilities for the different menus (make a library/function that facilitates this)
+	* "printf_Color()" function that accepts a string, a color, and a substring that you want colored
+		! ERROR HANDLING: if substring isn't found in the string or color doesn't exist,
+							stop the program and output an error message.
+
+	* "printf_Multicolor()" - similar to previous, but it accepts variadic arguments:
+		+ string to print,
+		+ color,
+		+ no. of substrings for that color,
+		+ the actual substrings,
+		+ another color,
+		+ ...
+		+ NULL as sentinel parameter.
+
+- OOP take for future versions: 
+	- void pointer to "internals" or "properties" for private class members
+	- function pointers as public methods of the class
+	- constructor and destructor functions will remain as external functions,
+		but constructors will new also initialize class instances, connecting
+		function pointers to each method function
+
+- Make a function that shows the table graphically
+	*	Elements will be represented with their respective chemical symbol
+	1.	Traverse the table and find the list with the most
+		elements (most groups per period)
+	2.	Print each element, period per period.
+		*	If there's a jump between two elements' group numbers,
+			put as many separators (spaces, tabs, etc.) as the
+			difference between them.
+
+	!	it may be best to:
+		1.	Transform each list of elements to string,
+		2.	Measure the length of each string and find max length,
+		3.	Add as many separator chars as lacking chars to
+			get to the max length.
+
+	!	Though handy, his process is not necessary when printing the default
+		periodic table. Could still use it anyways, as doing this manually
+		would be very tedious.

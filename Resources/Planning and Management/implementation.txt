@@ -1,0 +1,99 @@
+Based on ProjRequirements.txt
+
+
+STRUCTURES:
+	- Periodic Table -> list of lists (dynamic matrix)
+		+ list of lanthanides
+		+ list of actinides
+	- (periodic) element (dynamicaly allocated)
+	- alternate element for serialization (staticly allocated)
+
+
+PERIODIC TABLE PROPERTIES:
+	- list of lists of elements
+	- list of lanthanides
+	- list of actinides
+	- group (column number)
+	- period (row number)
+
+ELEMENT PROPERTIES:
+	- Name
+	- Symbol (3 characters max)
+	- Atomic Number
+	- Atomic Mass
+	- Type (represented by color):
+		- noble gases,
+		- alkali metal,
+		- alkali earth metal,
+		- transition metal,
+		- semimetal,
+		- non-metal,
+		- "other metal",
+		- halogen,
+		- actinide,
+		- lanthanide,
+		- antigen,
+	- state of aggregation (represented by color)
+		- gas,
+		- liquid,
+		- solid,
+		- synthetic
+
+
+FUNCTIONS:
+	show funcs:
+		showPeriodicTable()
+		showElement()
+		showElements(int elemCount, ...)
+
+	search funcs:
+		searchByName(string name)
+		searchBySymbol(char[3] symbol)
+		searchByAtomicNumber(int atomNum)
+		searchByAtomicMass(float mass)
+		searchByGroup(int group)
+		searchByPeriod(int period)
+		searchByGroupPeriod(int group, int period)
+		searchByType(string type)
+		searchByState(string state) (of aggregation)
+
+	Adding/Removing elements:
+		addToTable(Element)
+			newElement()
+		removeFromTable(Element)
+			delElement()
+		insertInTable(Element, int group, int period)
+
+	Editing funcs: setters
+		setElementName()
+		setElementSymbol()
+		setElement...()
+		...
+
+	Serialization funcs: ...ToString() type funcs
+		elementToString() << these ones convert all info to string (prior to serializing)
+		tableToString()
+		...
+		serializeTable() << this one does the file writing
+
+	Deserialization funcs:
+		deserializeTable()
+			deserializeElement() << subfunction that rebuilds dynamic struct for element
+
+
+------------------------------------------------------------------------------------
+
+NOTES:
+	* Remember, since each element has group (column) and period (row),
+		the table will always be sorted.
+	* Group and Period will also be stored in the table structure, not in the element structure.
+
+	* Actinides and lanthanides are separated from the rest of the grouped and perioded elements.
+	* Actinides and lanthanides only have group (column) number and not period (row).
+	* Adding/Removing element functions will be aware of element type (wether it's lanthanide, actinide or other)
+	  prior to adding/removing it from the table.
+	* insertToTable() >>> Period argument will be ignored when inserting a lanthanide or actinide
+	* Periodic Table will always be sorted by atomic number. Elements are added ordered,
+	  and when an element's atomic number is set to a new value, it'll be automatically
+	  removed and re-inserted to the Table, according to the value of the elements next to it.
+	* Elements added to the Table cannot have a previously existing atomic number.

@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Archivos de origen">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Archivos de encabezado">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Archivos de recursos">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Archivos de recursos\Planning and Management">
+      <UniqueIdentifier>{fbd0338b-2303-473a-8110-73626afbe3d8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de recursos\Saved Files">
+      <UniqueIdentifier>{fda70e25-ba32-4927-830b-e69778ef6687}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de recursos\References">
+      <UniqueIdentifier>{929c17e0-a229-4912-b43a-9c0e1fb85dae}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.c">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="Element.c">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="Node.c">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="List.c">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="PeriodicTable.c">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="utilities.c">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Element.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="List.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="Node.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="PeriodicTable.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="utilities.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Resources\Planning and Management\futureImprovements.txt">
+      <Filter>Archivos de recursos\Planning and Management</Filter>
+    </Text>
+    <Text Include="Resources\Planning and Management\implementation.txt">
+      <Filter>Archivos de recursos\Planning and Management</Filter>
+    </Text>
+    <Text Include="Resources\Planning and Management\ProjRequirements.txt">
+      <Filter>Archivos de recursos\Planning and Management</Filter>
+    </Text>
+    <Text Include="Resources\Saved Files\periodicTable.txt">
+      <Filter>Archivos de recursos\Saved Files</Filter>
+    </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\References\Periodic_table_large_ENGLISH.pdf">
+      <Filter>Archivos de recursos\References</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Resources\References\Periodic_table_large-es-updated-2018.jpg">
+      <Filter>Archivos de recursos\References</Filter>
+    </Image>
+    <Image Include="Resources\References\tabla-periodica-elementos.png">
+      <Filter>Archivos de recursos\References</Filter>
+    </Image>
+  </ItemGroup>
+</Project>

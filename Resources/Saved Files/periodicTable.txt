@@ -1,0 +1,8 @@
+Element:
+	Name: Hydrogen
+	Symbol: H
+	Atomic Number: 1
+	Atomic Mass: 1.007940
+	Type: 5 (Non-Metals)
+	State: 0 (Gas)
+
