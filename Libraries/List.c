@@ -154,9 +154,15 @@ bool addOrderedList(List* self, void* data, bool (*compareData)(void*, void*))
 	bool result = false;
 
 	if (emptyList(self)) // if there's no data in the list
+	{
 		addList(self, data);
+		result = true;
+	}
 	else if (compareData(data, getHeadList(self)))
+	{
 		addList(self, data); // adding to the beginning
+		result = true;
+	}
 	else
 	{
 		List* prevList = newList();
@@ -172,7 +178,11 @@ bool addOrderedList(List* self, void* data, bool (*compareData)(void*, void*))
 			if (!compareData(data, prevData) && compareData(data, currData))
 			{ // adding in the middle
 				if (!insertByHead(prevList, data)) exit(1);
-				else added = true;
+				else
+				{
+					added = true;
+					result = true;
+				}
 			}
 
 			List* temp = prevList;
@@ -182,6 +192,7 @@ bool addOrderedList(List* self, void* data, bool (*compareData)(void*, void*))
 		}
 		// adding at the end (no need to check atomic nums.)
 		if (!insertByHead(currList, data)) exit(1);
+		else result = true;
 
 		delList(&prevList, false);
 		delList(&currList, false);
