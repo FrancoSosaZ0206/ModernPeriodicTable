@@ -20,7 +20,7 @@ typedef enum elemAttribute
 } elemAttribute;
 
 Ptable* newPtable();
-void delPtable(Ptable**);
+void delPtable(Ptable**, bool delElements);
 
 /* Serializes the file.
 	path = absolute path to
@@ -29,7 +29,7 @@ void delPtable(Ptable**);
 		   If path is NULL, default path "Resources/default/periodicTable.txt" will be used.
 	deleteTable = true if you want to also delete the Ptable struct, false otherwise.
 Returns true if could save table to file, false otherwise. */
-bool savePtable(Ptable**, char* path, bool deleteTable);
+bool savePtable(Ptable**, char* path, bool deleteTable, bool delElements);
 /* Deserializes the file.path = absolute path to the file with elements.
 Returns loaded Periodic Table struct, NULL if there's a failure. */
 Ptable* loadPtable(char* path);
@@ -57,7 +57,9 @@ Element* findElement(Ptable*, elemAttribute, void* attrValue);
 void showPtable(Ptable*);
 /* Displays a selection of elements from the Table.
 elemCount = the amount of selected elements to display.
-... = the atomic numbers of each element. */
+... = for each element, send:
+	attribute type (elemAttribute)
+	POINTER TO the value of that attribute. */
 void showElements(Ptable*, unsigned int elemCount, ...);
 
 

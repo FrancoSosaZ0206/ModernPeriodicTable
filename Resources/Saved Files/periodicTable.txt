@@ -1,8 +1,102 @@
-Element:
+PERIODIC TABLE (8 Elements)
+
+*****************************************
+
+1. Element:
+	Group: 1
+	Period: 1
 	Name: Hydrogen
 	Symbol: H
 	Atomic Number: 1
-	Atomic Mass: 1.007940
-	Type: 5 (Non-Metals)
-	State: 0 (Gas)
+	Atomic Mass: 1.008000
+	Type: Non-Metals (5)
+	State: Gas (0)
+
+.....................................
+
+2. Element:
+	Group: 18
+	Period: 1
+	Name: Helium
+	Symbol: He
+	Atomic Number: 2
+	Atomic Mass: 4.002600
+	Type: Noble Gases (0)
+	State: Gas (0)
+
+.....................................
+
+3. Element:
+	Group: 1
+	Period: 2
+	Name: Lithium
+	Symbol: Li
+	Atomic Number: 3
+	Atomic Mass: 6.940000
+	Type: Alkali Metals (1)
+	State: Solid (2)
+
+.....................................
+
+4. Element:
+	Group: 2
+	Period: 2
+	Name: Beryllium
+	Symbol: Be
+	Atomic Number: 4
+	Atomic Mass: 9.012200
+	Type: Alkali Earth Metals (2)
+	State: Solid (2)
+
+.....................................
+
+5. Element:
+	Group: 8
+	Period: 4
+	Name: Iron
+	Symbol: Fe
+	Atomic Number: 26
+	Atomic Mass: 55.845001
+	Type: Transition Metals (3)
+	State: Solid (2)
+
+.....................................
+
+6. Element:
+	Group: 3
+	Period: 6
+	Name: Neodymium
+	Symbol: Nd
+	Atomic Number: 60
+	Atomic Mass: 144.240005
+	Type: Lanthanides (7)
+	State: Solid (2)
+
+.....................................
+
+7. Element:
+	Group: 12
+	Period: 6
+	Name: Mercury
+	Symbol: Hg
+	Atomic Number: 80
+	Atomic Mass: 200.589996
+	Type: Transition Metals (3)
+	State: Liquid (1)
+
+.....................................
+
+8. Element:
+	Group: 3
+	Period: 7
+	Name: Uranium
+	Symbol: U
+	Atomic Number: 92
+	Atomic Mass: 238.029999
+	Type: Actinides (8)
+	State: Solid (2)
+
+.....................................
+
+*****************************************
 

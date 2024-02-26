@@ -34,7 +34,7 @@ typedef enum elemState
 // Constructor/Destructor
 
 Element* newElement(int group, int period,
-					char* name, char symbol[3],
+					char* name, char symbol[4],
 					int atomicNum, float mass,
 					elemType, elemState // of aggregation
 				   );
@@ -47,7 +47,7 @@ void delElement(Element**);
 void setElementGroup	(Element*, int);
 void setElementPeriod	(Element*, int);
 void setElementName		(Element*, char*);
-void setElementSymbol	(Element*, char[3]);
+void setElementSymbol	(Element*, char[4]);
 void setElementAtomicNum(Element*, int);
 void setElementMass		(Element*, float);
 void setElementType		(Element*, elemType);

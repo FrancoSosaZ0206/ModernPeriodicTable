@@ -28,19 +28,28 @@ List* newList()
 		self->head = NULL;
 	return self;
 }
-void delList(List** self, bool delNodes)
+void delList(List** self, bool delNodes, bool delData, void (*delDataFunc)(void**))
 {
-	if (delNodes)
-		while (!emptyList(*self))
-			shiftList(*self);
+	if (*self)
+	{
+		if (delNodes)
+		{
+			while (!emptyList(*self))
+			{
+				void* data = shiftList(*self);
+				if (delData && delDataFunc)
+					delDataFunc(&data);
+			}
+		}
 
-	free(*self);
-	*self = NULL;
+		free(*self);
+		*self = NULL;
+	}
 }
 
 bool emptyList(List* self)
 {
-	return !self->head;
+	return self && !self->head;
 }
 
 //*******************************************
@@ -66,14 +75,17 @@ Node* getNodeList(List* self, int pos)
 int lenList(List* self)
 {
 	int len = 0;
-	Node* node = self->head;
-
-	if (node)
+	if (self)
 	{
-		while (node)
+		Node* node = self->head;
+
+		if (node)
 		{
-			node = getNext(node);
-			len++;
+			while (node)
+			{
+				node = getNext(node);
+				len++;
+			}
 		}
 	}
 	return len;
@@ -112,9 +124,13 @@ void addList(List* self, void* data) // adding to the beginning of list
 }
 void pushList(List* self, void* data) // adding to the end of list
 {
-	Node* node = newNode(data);
-	Node* last = getNodeList(self, lenList(self));
-	setNext(last, node);
+	if (emptyList(self)) addList(self, data);
+	else
+	{
+		Node* node = newNode(data);
+		Node* last = getNodeList(self, lenList(self));
+		setNext(last, node);
+	}
 }
 bool insertList(List* self, void* data, int pos)
 {
@@ -188,14 +204,17 @@ bool addOrderedList(List* self, void* data, bool (*compareData)(void*, void*))
 			List* temp = prevList;
 			prevList = currList;
 			currList = getRestList(currList);
-			delList(&temp, false);
+			delList(&temp, false, false, NULL);
 		}
 		// adding at the end (no need to check atomic nums.)
-		if (!insertByHead(currList, data)) exit(1);
-		else result = true;
+		if (!added)
+		{
+			if (!insertByHead(prevList, data)) exit(1);
+			else result = true;
+		}
 
-		delList(&prevList, false);
-		delList(&currList, false);
+		delList(&prevList, false, false, NULL);
+		delList(&currList, false, false, NULL);
 	}
 
 	return result;
@@ -266,11 +285,11 @@ void* removeOrderedList(List* self, void* key, bool (*matchData)(void*, void*))
 				List* temp = prevList;
 				prevList = currList;
 				currList = getRestList(currList);
-				delList(&temp, false);
-			}
-
-			delList(&prevList, false);
-			delList(&currList, false);
+				delList(&temp, false, false, NULL);
+			}						
+									
+			delList(&prevList, false, false, NULL);
+			delList(&currList, false, false, NULL);
 		}
 	}
 
@@ -303,10 +322,10 @@ void showList(List* self, void (*showData)(void*)) // requires function to show 
 
 			List* temp = aux;
 			aux = getRestList(aux);
-			delList(&temp, false);
+			delList(&temp, false, false, NULL);
 		}
 		printf("*****************************************\n\n");
-		delList(&aux, false);
+		delList(&aux, false, false, NULL);
 	}
 }
 
@@ -336,10 +355,10 @@ char* listToString(List* self, char* (*dataToString)(void*))
 
 			List* temp = aux;
 			aux = getRestList(aux);
-			delList(&temp, false);
+			delList(&temp, false, false, NULL);
 		}
 		myStrcat(&strList, "*****************************************\n\n");
-		delList(&aux, false);
+		delList(&aux, false, false, NULL);
 	}
 
 	return strList;
@@ -361,9 +380,9 @@ List* cloneList(List* self, void* (*cloneData)(void*))
 
 			List* temp = aux;
 			aux = getRestList(aux);
-			delList(&temp, false);
+			delList(&temp, false, false, NULL);
 		}
-		delList(&aux, false);
+		delList(&aux, false, false, NULL);
 	}
 	return clone;
 }
@@ -436,10 +455,10 @@ List* sortList(List* self, void* (*cloneData)(void*), bool (*compareData)(void*,
 							List* temp = lprev;
 							lprev = lcurr;
 							lcurr = getRestList(lcurr);
-							delList(&temp, false);
+							delList(&temp, false, false, NULL);
 						}
-						delList(&lprev, false);
-						delList(&lcurr, false);
+						delList(&lprev, false, false, NULL);
+						delList(&lcurr, false, false, NULL);
 					}
 					break;
 				}
@@ -447,9 +466,9 @@ List* sortList(List* self, void* (*cloneData)(void*), bool (*compareData)(void*,
 			}
 			List* temp = aux;
 			aux = getRestList(aux);
-			delList(&temp, false);
+			delList(&temp, false, false, NULL);
 		}
-		delList(&aux, false);
+		delList(&aux, false, false, NULL);
 		if (emptyList(clone)) exit(1);
 	}
 	return clone;
@@ -475,9 +494,9 @@ void* findList(List* self, void* key, bool (*matchData)(void*, void*))
 
 			List* temp = aux;
 			aux = getRestList(aux);
-			delList(&temp, false);
+			delList(&temp, false, false, NULL);
 		}
-		delList(&aux, false);
+		delList(&aux, false, false, NULL);
 	}
 
 	return target;

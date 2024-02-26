@@ -16,7 +16,7 @@ typedef struct Element
 	int group;
 	int period;
 	char* name;
-	char symbol[3];
+	char symbol[4];
 	int atomicNum;
 	float mass;
 	elemType type;
@@ -49,8 +49,8 @@ const char* ELEMENT_FORMAT_OUT =
 "\tSymbol: %s\n"
 "\tAtomic Number: %d\n"
 "\tAtomic Mass: %f\n"
-"\tType: %d (%s)\n"
-"\tState: %d (%s)\n\n";
+"\tType: %s (%d)\n"
+"\tState: %s (%d)\n\n";
 
 const char* ELEMENT_FORMAT_IN =
 "Element:\n"
@@ -60,8 +60,8 @@ const char* ELEMENT_FORMAT_IN =
 "\tSymbol: %[^\n]\n"
 "\tAtomic Number: %d\n"
 "\tAtomic Mass: %f\n"
-"\tType: %d (%[^)])\n"
-"\tState: %d (%[^)])";
+"\tType: %[^(] (%d)\n"
+"\tState: %[^(] (%d)\n\n";
 
 const char* ELEMENT_FORMAT_OUT_SHORT =
 "%s (%s)\n"
@@ -75,7 +75,7 @@ const char* ELEMENT_FORMAT_OUT_SHORT =
 // Constructor/Destructor
 
 Element* newElement(int group, int period, 
-					char* name, char symbol[3],
+					char* name, char symbol[4],
 					int atomicNum, float mass,
 					elemType type, elemState state)
 {
@@ -126,7 +126,7 @@ void setElementName(Element* self, char* name)
 	if(self->name)
 		strcpy(self->name, name);
 }
-void setElementSymbol(Element* self, char symbol[3])
+void setElementSymbol(Element* self, char symbol[4])
 {
 	strcpy(self->symbol, symbol);
 }
@@ -224,8 +224,8 @@ void serializeElement(Element* self, FILE* file)
 	fprintf(file, ELEMENT_FORMAT_OUT, self->group, self->period,
 		self->name, self->symbol,
 		self->atomicNum, self->mass,
-		self->type, typeStr[self->type],
-		self->state, stateStr[self->state]);
+		typeStr[self->type], self->type,
+		stateStr[self->state], self->state);
 }
 Element* deserializeElement(FILE* file)
 {
@@ -234,7 +234,7 @@ Element* deserializeElement(FILE* file)
 	int groupBuffer = -1;
 	int periodBuffer = -1;
 	char nameBuffer[50] = "";
-	char symbolBuffer[3] = "";
+	char symbolBuffer[4] = "";
 	int atomicNumBuffer = -1;
 	float massBuffer = -1.0f;
 	elemType typeBuffer = -1;
@@ -247,7 +247,7 @@ Element* deserializeElement(FILE* file)
 	if(fscanf(file, ELEMENT_FORMAT_IN, &groupBuffer, &periodBuffer,
 									   nameBuffer, symbolBuffer,
 									   &atomicNumBuffer, &massBuffer,
-									   &typeBuffer, dummyStr, &stateBuffer, dummyStr2))
+									   dummyStr, &typeBuffer, dummyStr2, &stateBuffer))
 		// we load it in memory
 		deserialized = newElement(groupBuffer, periodBuffer,
 								  nameBuffer, symbolBuffer,

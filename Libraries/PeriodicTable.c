@@ -19,7 +19,7 @@ bool matchElementName(char* name, Element* elem)
 {
 	return strcmp(name, getElementName(elem)) == 0;
 }
-bool matchElementSymbol(char symbol[3], Element* elem)
+bool matchElementSymbol(char symbol[4], Element* elem)
 {
 	return strcmp(symbol, getElementSymbol(elem)) == 0;
 }
@@ -27,7 +27,7 @@ bool matchElementAtomicNum(int* atomicNum, Element* elem)
 {
 	return *atomicNum == getElementAtomicNum(elem);
 }
-bool matchElementMass(int* mass, Element* elem)
+bool matchElementMass(float* mass, Element* elem)
 {
 	return *mass == getElementMass(elem);
 }
@@ -46,12 +46,12 @@ Ptable* newPtable()
 {
 	return newList();
 }
-void delPtable(Ptable** self)
+void delPtable(Ptable** self, bool delElements)
 {
-	delList(self, true);
+	delList(self, true, delElements, delElement);
 }
 
-bool savePtable(Ptable** self, char* path, bool deleteTable)
+bool savePtable(Ptable** self, char* path, bool deleteTable, bool delElements)
 {
 	bool result = false;
 	if (path && strlen(path) > 0 &&
@@ -65,6 +65,9 @@ bool savePtable(Ptable** self, char* path, bool deleteTable)
 		file = fopen(path, "w");
 		if (!file) exit(1);
 
+		fprintf(file, "PERIODIC TABLE (%d Elements)\n\n", lenList(*self));
+		fprintf(file, "*****************************************\n\n");
+
 		List* aux = newList();
 		mergeLists(aux, *self);
 
@@ -76,15 +79,17 @@ bool savePtable(Ptable** self, char* path, bool deleteTable)
 
 			List* temp = aux;
 			aux = getRestList(aux);
-			delList(&temp, false);
+			delList(&temp, false, false, NULL);
 		}
 		fprintf(file, "*****************************************\n\n");
-		delList(&aux, false);
+		delList(&aux, false, false, NULL);
 
 		fclose(file);
 
-		if(deleteTable)
-			delPtable(self);
+		if (deleteTable)
+			delPtable(self, delElements);
+
+		result = true;
 	}
 	return result;
 }
@@ -98,11 +103,15 @@ Ptable* loadPtable(char* path)
 
 		if (file)
 		{
+			int n = 0;
+			fscanf(file, "PERIODIC TABLE (%d Elements)\n\n", &n);
+			fscanf(file, "*****************************************\n\n");
+
 			loaded = newPtable();
-			while (!feof(file))
+			for (int i = 0; i < n; i++)
 			{
-				int i = 0;
-				fscanf(file, "%d. ", &i);
+				int elemInd = 0;
+				fscanf(file, "%d. ", &elemInd);
 
 				Element* loadedElem = deserializeElement(file);
 				if (!loadedElem) exit(1);
@@ -180,8 +189,9 @@ void showElements(Ptable* self, unsigned int elemCount, ...)
 
 		for (int i = 0; i < elemCount; i++)
 		{
-			Element* elem = findElement(self,	va_arg(elems, elemAttribute),
-												va_arg(elems, void*));
+			elemAttribute attr = va_arg(elems, elemAttribute);
+			void* attrValue = va_arg(elems, void*);
+			Element* elem = findElement(self, attr, attrValue);
 
 			printf("Element %d %s", i + 1, elem ? "(found): " :
 												  "(not found)\n\n");

@@ -48,7 +48,7 @@ FUNCTIONS:
 
 	search funcs:
 		searchByName(string name)
-		searchBySymbol(char[3] symbol)
+		searchBySymbol(char[4] symbol)
 		searchByAtomicNumber(int atomNum)
 		searchByAtomicMass(float mass)
 		searchByGroup(int group)
