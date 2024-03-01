@@ -40,3 +40,7 @@
 	!	Though handy, his process is not necessary when printing the default
 		periodic table. Could still use it anyways, as doing this manually
 		would be very tedious.
+
+- Saving table into files: implement a small "session" system that remembers the path to the saved file,
+	so that the user doesn't have to type the full path and name of the file each time they want to
+	save it.

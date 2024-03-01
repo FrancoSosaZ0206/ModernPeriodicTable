@@ -78,6 +78,11 @@ void serializeElement(Element*, FILE*);
 // Assumes file exists and is already open in read mode
 Element* deserializeElement(FILE*);
 
+void showElementTypes();
+void showElementStates();
+
+void elementTypes_Menu();
+void elementStates_Menu();
 
 
 #endif // !ELEMENT_H_INCLUDED

@@ -54,15 +54,22 @@ void delPtable(Ptable** self, bool delElements)
 bool savePtable(Ptable** self, char* path, bool deleteTable, bool delElements)
 {
 	bool result = false;
-	if (path && strlen(path) > 0 &&
-		*self && !emptyList(*self))
+	if (*self && !emptyList(*self))
 	{
 		FILE* file = NULL;
-		file = fopen(path, "r");
+		if (path)
+			file = fopen(path, "r");
+		else
+			file = fopen("Resources/Saved Files/default/periodicTable.txt", "r");
+
 		if (file) // file exists
 			fclose(file);
 
-		file = fopen(path, "w");
+		if (path)
+			file = fopen(path, "w");
+		else
+			file = fopen("Resources/Saved Files/default/periodicTable.txt", "w");
+
 		if (!file) exit(1);
 
 		fprintf(file, "PERIODIC TABLE (%d Elements)\n\n", lenList(*self));
@@ -185,9 +192,9 @@ void showElements(Ptable* self, unsigned int elemCount, ...)
 	{
 		va_list elems;
 		// each elem. attribute goes with its respective elemAttribute:
-		va_start(elems, elemCount * 2);
+		va_start(elems, elemCount);
 
-		for (int i = 0; i < elemCount; i++)
+		for (unsigned int i = 0; i < elemCount; i++)
 		{
 			elemAttribute attr = va_arg(elems, elemAttribute);
 			void* attrValue = va_arg(elems, void*);

@@ -1,0 +1,66 @@
+int option = -1;
+
+do
+{
+
+
+
+MENU PRINTING:
+
+
+
+	printf("MENU TITLE\n\n");
+
+	printf("op1 = 1\n");
+	printf("op2 = 2\n");
+	printf("op3 = 3\n");
+	...
+	printf("EXIT = 0\n\n");
+
+	printf("Select an option: ");
+	scanf("%d", option);
+	clrBuffer();
+	system("cls");
+
+
+
+MENU ACTIONS:
+
+	switch(option)
+	{
+	case 1:
+
+		
+
+		YOU CAN CALL FUNCTIONS
+
+
+
+		doThing1();
+		break;
+	case 2:
+
+
+
+		...STRAIGHT UP CODE...
+
+
+		break;
+	case 3:
+
+
+		OR ANIDATE OTHER MENUS (SUBMENUS) TOO
+	
+	
+		break;
+	default:
+		printf("Incorrect option\n");
+		getchar();
+		clrBuffer();
+		system("cls");
+		break;
+	}
+
+
+
+} while(option != 0)

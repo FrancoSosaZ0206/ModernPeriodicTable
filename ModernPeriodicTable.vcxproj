@@ -127,9 +127,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <Text Include="Resources\Menus code structure.txt" />
     <Text Include="Resources\Planning and Management\futureImprovements.txt" />
     <Text Include="Resources\Planning and Management\implementation.txt" />
     <Text Include="Resources\Planning and Management\ProjRequirements.txt" />
+    <Text Include="Resources\Saved Files\default\periodicTable.txt" />
     <Text Include="Resources\Saved Files\periodicTable.txt" />
   </ItemGroup>
   <ItemGroup>
@@ -142,6 +144,7 @@
   <ItemGroup>
     <ClInclude Include="Libraries\Element.h" />
     <ClInclude Include="Libraries\List.h" />
+    <ClInclude Include="Libraries\Menus.h" />
     <ClInclude Include="Libraries\Node.h" />
     <ClInclude Include="Libraries\PeriodicTable.h" />
     <ClInclude Include="Libraries\utilities.h" />
@@ -149,6 +152,7 @@
   <ItemGroup>
     <ClCompile Include="Libraries\Element.c" />
     <ClCompile Include="Libraries\List.c" />
+    <ClCompile Include="Libraries\Menus.c" />
     <ClCompile Include="Libraries\Node.c" />
     <ClCompile Include="Libraries\PeriodicTable.c" />
     <ClCompile Include="Libraries\utilities.c" />

@@ -258,4 +258,41 @@ Element* deserializeElement(FILE* file)
 }
 
 
+void showElementTypes()
+{
+	printf("TYPES OF ELEMENTS\n");
+	printf("--------------------------\n\n");
+
+	for (int i = 0; i < 11; i++)
+		printf("%s ............................. %d\n", typeStr[i], i + 1);
+	printf("--------------------------\n\n");
+}
+void showElementStates()
+{
+	printf("STATES OF AGGREGATION\n");
+	printf("--------------------------\n\n");
+	for (int i = 0; i < 4; i++)
+		printf("%s ............................. %d\n", stateStr[i], i + 1);
+	printf("--------------------------\n\n");
+}
+
+void elementTypes_Menu()
+{
+	printf("--------------------------\n\n");
+
+	for (int i = 0; i < 11; i++)
+		printf("%s ............................. %d\n", typeStr[i], i + 1);
+	printf("--------------------------\n\n");
+	printf("Select an option: ");
+}
+void elementStates_Menu()
+{
+	printf("--------------------------\n\n");
+	for (int i = 0; i < 4; i++)
+		printf("%s ............................. %d\n", stateStr[i], i + 1);
+	printf("--------------------------\n\n");
+	printf("Select an option: ");
+}
+
+
 #endif // !_CRT_SECURE_NO_WARNINGS

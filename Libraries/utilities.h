@@ -11,4 +11,9 @@ string dynamicString(string literal);
 void myStrcpy(string* dest, string src);
 void myStrcat(string* dest, string src);
 
+// Clears the input buffer. Use it after taking user imput (i.e. scanf, getchar, etc.).
+void clrBuffer();
+// Pauses the program and shows "Press enter to continue" until the user presses enter.
+void promptEnter();
+
 #endif // !UTILITIES_H_INCLUDED

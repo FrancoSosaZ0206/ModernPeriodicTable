@@ -277,10 +277,14 @@ void* removeOrderedList(List* self, void* key, bool (*matchData)(void*, void*))
 			mergeLists(prevList, self);
 			List* currList = getRestList(prevList);
 
-			while (!emptyList(currList))
+			bool found = false;
+			while (!emptyList(currList) && !found)
 			{
 				if (matchData(key, getHeadList(currList)))
+				{
 					removed = removeList(prevList, 1);
+					found = true;
+				}
 
 				List* temp = prevList;
 				prevList = currList;

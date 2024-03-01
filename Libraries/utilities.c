@@ -50,4 +50,23 @@ void myStrcat(string* dest, string src)
 	}
 }
 
+void clrBuffer()
+{
+	int c;
+	while ((c = getchar()) != '\n' && c != EOF)
+	{
+		// Discard characters by reading them w/getchar()
+		// Dischard characters == DO NOTHING
+	}
+}
+
+void promptEnter()
+{
+	printf("\n\nPress enter to continue...\n\n");
+	// Same as clrBuffer():
+	int c;
+	while ((c = getchar()) != '\n' && c != EOF) {}
+}
+
+
 #endif // !_CRT_SECURE_NO_WARNINGS

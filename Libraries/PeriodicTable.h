@@ -26,7 +26,7 @@ void delPtable(Ptable**, bool delElements);
 	path = absolute path to
 		   existent file, or to folder in which the file
 		   will be created.
-		   If path is NULL, default path "Resources/default/periodicTable.txt" will be used.
+		   If path is NULL, default path "Resources/Saved Files/default/periodicTable.txt" will be used.
 	deleteTable = true if you want to also delete the Ptable struct, false otherwise.
 Returns true if could save table to file, false otherwise. */
 bool savePtable(Ptable**, char* path, bool deleteTable, bool delElements);

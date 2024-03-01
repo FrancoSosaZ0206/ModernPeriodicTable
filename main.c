@@ -9,135 +9,222 @@
 #include "Libraries/utilities.h"
 #include "Libraries/Element.h"
 #include "Libraries/PeriodicTable.h"
+#include "Libraries/Menus.h"
+
 
 
 int main()
 {
-	/* TESTING ROUTINE 1
-	
-	Ptable* p1 = newPtable();
+	Ptable* table = NULL;
+	int op = -1,
+		op1 = -1;
 
-	Element* e1 = newElement(1, 1, "Hydrogen", "H", 1, 1.008f, NonMetals, Gas);
-	Element* e2 = newElement(18, 1, "Helium", "He", 2, 4.0026f, NobleGases, Gas);
-	Element* e3 = newElement(1, 2, "Lithium", "Li", 3, 6.94f, AlkaliMetals, Solid);
-	Element* e4 = newElement(2, 2, "Beryllium", "Be", 4, 9.0122f, AlkaliEarthMetals, Solid);
-	Element* e5 = newElement(8, 4, "Iron", "Fe", 26, 55.845f, TransitionMetals, Solid);
-	Element* e6 = newElement(12, 6, "Mercury", "Hg", 80, 200.59f, TransitionMetals, Liquid);
-	Element* e7 = newElement(3, 6, "Neodymium", "Nd", 60, 144.24f, Lanthanides, Solid);
-	Element* e8 = newElement(3, 7, "Uranium", "U", 92, 238.03f, Actinides, Solid);
-
-	addElement(p1, e1);
-	addElement(p1, e2);
-	addElement(p1, e3);
-	addElement(p1, e4);
-	addElement(p1, e5);
-	addElement(p1, e6);
-	addElement(p1, e7);
-	addElement(p1, e8);
-
-	printf("MY PERIODIC TABLE\n");
-	printf("_________________\n\n");
-	showPtable(p1);
-
-	if(!savePtable(&p1, "Resources/Saved Files/PeriodicTable.txt", true, true)) exit(1); */
-
-	/* TESTING ROUTINE 2
-	Ptable* p1 = loadPtable("Resources/Saved Files/PeriodicTable.txt");
-	if (!p1) exit(1);
-
-	showPtable(p1);
-	getchar("\n");
-	fflush(stdin);
-	system("cls");
-
-	int atomicNum = ;
-
-	printf("Removing element: (a.n. = %d)...\n\n", atomicNum);
-	getchar("\n");
-	fflush(stdin);
-	system("cls");
-
-	Element* removed = removeElement(p1, atomicNum);
-
-	printf("%s\n\n", removed ? "Element removed successfully!" : "Couldn't remove element.");
-	if (removed) showElement(removed);
-
-	getchar("\n");
-	fflush(stdin);
-	system("cls");
-
-	printf("Updated Ptable:\n\n");
-	showPtable(p1);
-
-	delPtable(&p1, true);
-	if (removed) delElement(&removed);*/
-
-	/* TESTING ROUTINE 3
-
-	Ptable* p = NULL;
-	char path[100] = "";
-
-	printf("Welcome. Insert path to file to load ptable below:\n");
-	scanf("%[^\n]%*c", path);
-	fflush(stdin);
-
-	p = loadPtable(path);
-	system("cls");
-	if (!p)
-		printf("ERROR: the path is invalid or the file doesn't exist.");
-	else
-		printf("Periodic table loaded successfully.");
-	getchar();
-	system("cls");
-
-	if (p)
+	do
 	{
-		showPtable(p);
-		getchar();
-
-		char symbol[4] = "Hg";
-		printf("Searching element by symbol (%s)...\n\n", symbol);
-		getchar();
-
-		Element* found = findElement(p, Symbol, symbol);
-		if (found)
-		{
-			printf("Element found!\n\n");
-			showElement(found);
-		}
-		else printf("Element could not be found on the table.\n\n");
-
-		getchar();
 		system("cls");
-		delPtable(&p, true);
-	} */
+		printMenu("MAIN MENU", true, 2,
+			"Create new table",
+			"Load existing table");
 
-	/* TESTING ROUTINE 4
+		scanf("%d", &op);
+		clrBuffer();
+		system("cls");
 
-	Ptable* p = loadPtable("Resources/Saved Files/PeriodicTable.txt");
+		switch (op)
+		{
+			case 1:
+			{
+				if (!table)
+				{
+					table = newPtable();
+					printf("New Table created.");
+					promptEnter();
+				}
+				break;
+			}
+			case 2:
+			{
+				char path[100] = "";
 
-	if (p)
-	{
-		printf("Showing full list:\n\n");
-		showPtable(p);
+				printf("Insert absolute path to file: ");
+				scanf("%[^\n]", path);
+				clrBuffer();
 
-		getchar();
+				table = loadPtable(path);
+				printf("%s.\n", table ?
+					"Table loaded successfully" :
+					"ERROR: table couldn't be loaded");
+				promptEnter();
+				break;
+			}
+			case 0:
+			{
+				break;
+			}
+			default:
+			{
+				printf("Incorrect option.\n");
+				promptEnter();
+				break;
+			}
+		}
 
-		char symbolE1[4] = "H";
-		float massE2 = 144.240005f;
-		char nameE3[30] = "Lithium";
-		printf("Showing attributes to search:\n\n");
-		printf("Elem. 1 - Symbol = %s\n", symbolE1);
-		printf("Elem. 2 - Atomic Mass = %f\n", massE2);
-		printf("Elem. 3 - Name = %s\n\n", nameE3);
+		if (op != 0 && table)
+		{
+			do
+			{
+				system("cls");
+				printMenu("TABLE MANAGEMENT", false, 6,
+					"Add element",
+					"Remove element",
+					"Find element",
+					"Show elements",
+					"Show table",
+					"Save table to file");
 
-		getchar();
+				scanf("%d", &op1);
+				clrBuffer();
+				system("cls");
 
-		printf("Showing element selection:\n\n");
-		showElements(p, 3, Symbol, symbolE1, Mass, &massE2, Name, nameE3);
+				switch (op1)
+				{
+					case 1:
+					{
+						int group = 0,
+							period = 0;
+						char nameBuffer[50] = "";
+						char symbolBuffer[4] = "";
+						int atomicNum = 0;
+						float mass = 0.0f;
+						elemType eType = -1;
+						elemState eState = -1;
 
-		delPtable(&p, true);
-	} */
+						int eTypeOp = -1,
+							eStateOp = -1;
+
+						printf("ADDING ELEMENT\n\n");
+						printf("--------------------------\n\n");
+						printf("Insert group and period\nGROUP, PERIOD >>> ");
+						scanf("%d, %d", &group, &period);
+						clrBuffer();
+
+						printf("\n\nInsert name and chemical symbol (symbol = 3 characters max)\nNAME, SYMBOL >>> ");
+						scanf("%[^,], %[^\n]", nameBuffer, symbolBuffer);
+						clrBuffer();
+
+						printf("\n\nInsert atomic number and mass\nATOMIC NUMBER, MASS >>> ");
+						scanf("%d, %f", &atomicNum, &mass);
+						clrBuffer();
+
+						printf("\n\nSelect the type of the new element:\n");
+						elementTypes_Menu();
+						do
+						{
+							scanf("%d", &eTypeOp);
+							clrBuffer();
+						} while (eTypeOp < 1 || eTypeOp > 11);
+						eType = eTypeOp - 1;
+
+						printf("\n\nSelect the aggregation state of the new element:\n");
+						elementStates_Menu();
+						do
+						{
+							scanf("%d", &eStateOp);
+							clrBuffer();
+						} while (eStateOp < 1 || eStateOp > 4);
+						eState = eStateOp - 1;
+
+						Element* newElem = newElement(group, period, nameBuffer, symbolBuffer, atomicNum, mass, eType, eState);
+						if (!addElement(table, newElem)) exit(1);
+						system("cls");
+						printf("Element added successfully.");
+						promptEnter();
+
+						break;
+					}
+					case 2:
+					{
+						int atomicNum = 0;
+
+						printf("REMOVING ELEMENT\n\n");
+						printf("Insert atomic number of the element to remove: ");
+						scanf("%d", &atomicNum);
+						clrBuffer();
+
+						Element* removed = removeElement(table, atomicNum);
+
+						if (removed)
+						{
+							printf("Element:\n\n");
+							showElement(removed);
+							printf("Removed successfully.");
+							delElement(&removed);
+						}
+						else
+							printf("Element couldn't be removed.");
+
+						promptEnter();
+						break;
+					}
+					case 5:
+					{
+						printf("SHOWING FULL TABLE:\n\n");
+						showPtable(table);
+						promptEnter();
+						break;
+					}
+					case 6:
+					{
+						char path[100] = "";
+						printf("Insert absolute path to file: ");
+						scanf("%[^\n]", path);
+						clrBuffer();
+						printf("%s.\n", savePtable(&table, path, false, false) ?
+							"Table saved successfully" :
+							"ERROR: table couldn't be saved");
+						promptEnter();
+						break;
+					}
+					case 0: // confirmation submenu:
+					{
+						printf("Do you want to save before going back?\n");
+						printf("-1 >>> YES\n");
+						printf("0 >>> NO\n\n");
+						printf("Select an option: ");
+						do
+						{
+							scanf("%d", &op1);
+							clrBuffer();
+						} while (op1 != -1 && op1 != 0);
+
+						if (op1 == -1)
+						{ // same as case 7
+							char path[100] = "";
+							printf("Insert absolute path to file: ");
+							scanf("%[^\n]", path);
+							clrBuffer();
+							printf("%s.\n", savePtable(&table, path, false, false) ?
+								"Table saved successfully" :
+								"ERROR: table couldn't be saved");
+							promptEnter();
+							op1 = 0;
+						}
+
+						break;
+					}
+					default:
+					{
+						printf("Incorrect option.\n");
+						promptEnter();
+						break;
+					}
+				}
+			} while (op1 != 0);
+		}
+
+	} while (op != 0);
+
+	delPtable(&table, true);
 
 	return 0;
 }

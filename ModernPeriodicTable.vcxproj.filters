@@ -22,6 +22,9 @@
     <Filter Include="Archivos de recursos\References">
       <UniqueIdentifier>{929c17e0-a229-4912-b43a-9c0e1fb85dae}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Archivos de recursos\Saved Files\default">
+      <UniqueIdentifier>{348df8ee-b1df-4c50-a950-73620a1602d8}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="Resources\Planning and Management\futureImprovements.txt">
@@ -35,6 +38,12 @@
     </Text>
     <Text Include="Resources\Saved Files\periodicTable.txt">
       <Filter>Archivos de recursos\Saved Files</Filter>
+    </Text>
+    <Text Include="Resources\Menus code structure.txt">
+      <Filter>Archivos de recursos</Filter>
+    </Text>
+    <Text Include="Resources\Saved Files\default\periodicTable.txt">
+      <Filter>Archivos de recursos\Saved Files\default</Filter>
     </Text>
   </ItemGroup>
   <ItemGroup>
@@ -66,6 +75,9 @@
     <ClInclude Include="Libraries\utilities.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
+    <ClInclude Include="Libraries\Menus.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.c">
@@ -84,6 +96,9 @@
       <Filter>Archivos de origen</Filter>
     </ClCompile>
     <ClCompile Include="Libraries\utilities.c">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="Libraries\Menus.c">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
   </ItemGroup>
