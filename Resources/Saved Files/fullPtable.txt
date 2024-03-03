@@ -1,4 +1,4 @@
-PERIODIC TABLE (8 Elements)
+PERIODIC TABLE (9 Elements)
 
 *****************************************
 
@@ -51,6 +51,18 @@ PERIODIC TABLE (8 Elements)
 .....................................
 
 5. Element:
+	Group: 14
+	Period: 2
+	Name: Carbon
+	Symbol: C
+	Atomic Number: 6
+	Atomic Mass: 12.011000
+	Type: Non-Metals (5)
+	State: Solid (2)
+
+.....................................
+
+6. Element:
 	Group: 8
 	Period: 4
 	Name: Iron
@@ -62,7 +74,7 @@ PERIODIC TABLE (8 Elements)
 
 .....................................
 
-6. Element:
+7. Element:
 	Group: 3
 	Period: 6
 	Name: Neodymium
@@ -74,7 +86,7 @@ PERIODIC TABLE (8 Elements)
 
 .....................................
 
-7. Element:
+8. Element:
 	Group: 12
 	Period: 6
 	Name: Mercury
@@ -86,7 +98,7 @@ PERIODIC TABLE (8 Elements)
 
 .....................................
 
-8. Element:
+9. Element:
 	Group: 3
 	Period: 7
 	Name: Uranium

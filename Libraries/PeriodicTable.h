@@ -62,5 +62,7 @@ elemCount = the amount of selected elements to display.
 	POINTER TO the value of that attribute. */
 void showElements(Ptable*, unsigned int elemCount, ...);
 
+void showElementAttributes();
+
 
 #endif // !PERIODIC_TABLE_H_DEFINED
