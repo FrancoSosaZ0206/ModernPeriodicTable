@@ -1,0 +1,2 @@
+- Change show selection from Ptable to List, so that it doesn't order selected elements, and instead keeps them
+	in the order the user selected them.

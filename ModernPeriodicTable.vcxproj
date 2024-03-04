@@ -131,6 +131,7 @@
     <Text Include="Resources\Planning and Management\futureImprovements.txt" />
     <Text Include="Resources\Planning and Management\implementation.txt" />
     <Text Include="Resources\Planning and Management\ProjRequirements.txt" />
+    <Text Include="Resources\Planning and Management\to-do.txt" />
     <Text Include="Resources\Saved Files\default\periodicTable.txt" />
     <Text Include="Resources\Saved Files\periodicTable.txt" />
   </ItemGroup>

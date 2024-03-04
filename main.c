@@ -124,14 +124,19 @@ int main()
 						} while (eTypeOp < 1 || eTypeOp > 11);
 						eType = eTypeOp - 1;
 
-						printf("\n\nSelect the aggregation state of the new element:\n");
-						elementStates_Menu();
-						do
+						if (eType == NobleGases)
+							eState = Gas;
+						else
 						{
-							scanf("%d", &eStateOp);
-							clrBuffer();
-						} while (eStateOp < 1 || eStateOp > 4);
-						eState = eStateOp - 1;
+							printf("\n\nSelect the aggregation state of the new element:\n");
+							elementStates_Menu();
+							do
+							{
+								scanf("%d", &eStateOp);
+								clrBuffer();
+							} while (eStateOp < 1 || eStateOp > 4);
+							eState = eStateOp - 1;
+						}
 
 						Element* newElem = newElement(group, period, nameBuffer, symbolBuffer, atomicNum, mass, eType, eState);
 						if (!addElement(table, newElem)) exit(1);
@@ -402,7 +407,7 @@ int main()
 													scanf("%d", &eStateOp);
 													clrBuffer();
 													system("cls");
-												} while (eStateOp < 0 || eStateOp > 3);
+												} while (eStateOp < 0 || eStateOp > 4);
 
 												newEstate = eStateOp - 1;
 												setElementState(found, newEstate);
@@ -624,6 +629,7 @@ int main()
 
 						if (op[2] != 0 && selected)
 						{
+							system("cls");
 							printf("Showing selected elements:\n\n");
 							showPtable(selected);
 							promptEnter();

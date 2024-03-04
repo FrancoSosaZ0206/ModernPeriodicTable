@@ -44,3 +44,10 @@
 - Saving table into files: implement a small "session" system that remembers the path to the saved file,
 	so that the user doesn't have to type the full path and name of the file each time they want to
 	save it.
+
+- Saving table into files: make a backup system that creates a separate folder.
+	The backup files will have the same name as the original,
+	with a special termination word or identifier, something like "-BACKUP".
+
+- Add a "other properties" list of attributes to each element, so that the user can optionally add things
+	like Electronegativity, oxidation states, etc.

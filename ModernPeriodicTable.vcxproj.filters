@@ -45,6 +45,9 @@
     <Text Include="Resources\Saved Files\default\periodicTable.txt">
       <Filter>Archivos de recursos\Saved Files\default</Filter>
     </Text>
+    <Text Include="Resources\Planning and Management\to-do.txt">
+      <Filter>Archivos de recursos\Planning and Management</Filter>
+    </Text>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\References\Periodic_table_large_ENGLISH.pdf">

@@ -1,4 +1,4 @@
-PERIODIC TABLE (9 Elements)
+PERIODIC TABLE (118 Elements)
 
 *****************************************
 
@@ -51,6 +51,18 @@ PERIODIC TABLE (9 Elements)
 .....................................
 
 5. Element:
+	Group: 13
+	Period: 2
+	Name: Boron
+	Symbol: B
+	Atomic Number: 5
+	Atomic Mass: 10.810000
+	Type: Semimetals (4)
+	State: Solid (2)
+
+.....................................
+
+6. Element:
 	Group: 14
 	Period: 2
 	Name: Carbon
@@ -62,7 +74,235 @@ PERIODIC TABLE (9 Elements)
 
 .....................................
 
-6. Element:
+7. Element:
+	Group: 15
+	Period: 2
+	Name: Nitrogen
+	Symbol: N
+	Atomic Number: 7
+	Atomic Mass: 14.007000
+	Type: Non-Metals (5)
+	State: Gas (0)
+
+.....................................
+
+8. Element:
+	Group: 16
+	Period: 2
+	Name: Oxygen
+	Symbol: O
+	Atomic Number: 8
+	Atomic Mass: 15.999000
+	Type: Non-Metals (5)
+	State: Gas (0)
+
+.....................................
+
+9. Element:
+	Group: 17
+	Period: 2
+	Name: Fluorine
+	Symbol: F
+	Atomic Number: 9
+	Atomic Mass: 18.997999
+	Type: Non-Metals (5)
+	State: Gas (0)
+
+.....................................
+
+10. Element:
+	Group: 18
+	Period: 2
+	Name: Neon
+	Symbol: Ne
+	Atomic Number: 10
+	Atomic Mass: 20.180000
+	Type: Noble Gases (0)
+	State: Gas (0)
+
+.....................................
+
+11. Element:
+	Group: 1
+	Period: 3
+	Name: Sodium
+	Symbol: Na
+	Atomic Number: 11
+	Atomic Mass: 22.990000
+	Type: Alkali Metals (1)
+	State: Solid (2)
+
+.....................................
+
+12. Element:
+	Group: 2
+	Period: 3
+	Name: Magnesium
+	Symbol: Mg
+	Atomic Number: 12
+	Atomic Mass: 24.305000
+	Type: Alkali Earth Metals (2)
+	State: Solid (2)
+
+.....................................
+
+13. Element:
+	Group: 13
+	Period: 3
+	Name: Aluminium
+	Symbol: Al
+	Atomic Number: 13
+	Atomic Mass: 26.982000
+	Type: Other Metals (6)
+	State: Solid (2)
+
+.....................................
+
+14. Element:
+	Group: 14
+	Period: 3
+	Name: Silicon
+	Symbol: Si
+	Atomic Number: 14
+	Atomic Mass: 28.084999
+	Type: Semimetals (4)
+	State: Solid (2)
+
+.....................................
+
+15. Element:
+	Group: 15
+	Period: 3
+	Name: Phosphorus
+	Symbol: P
+	Atomic Number: 15
+	Atomic Mass: 30.974001
+	Type: Non-Metals (5)
+	State: Solid (2)
+
+.....................................
+
+16. Element:
+	Group: 16
+	Period: 3
+	Name: Sulfur
+	Symbol: S
+	Atomic Number: 16
+	Atomic Mass: 32.060001
+	Type: Non-Metals (5)
+	State: Solid (2)
+
+.....................................
+
+17. Element:
+	Group: 17
+	Period: 3
+	Name: Chlorine
+	Symbol: Cl
+	Atomic Number: 17
+	Atomic Mass: 35.450001
+	Type: Non-Metals (5)
+	State: Gas (0)
+
+.....................................
+
+18. Element:
+	Group: 18
+	Period: 3
+	Name: Argon
+	Symbol: Ar
+	Atomic Number: 18
+	Atomic Mass: 39.948002
+	Type: Noble Gases (0)
+	State: Gas (0)
+
+.....................................
+
+19. Element:
+	Group: 1
+	Period: 4
+	Name: Potassium
+	Symbol: K
+	Atomic Number: 19
+	Atomic Mass: 39.098000
+	Type: Alkali Metals (1)
+	State: Solid (2)
+
+.....................................
+
+20. Element:
+	Group: 2
+	Period: 4
+	Name: Calcium
+	Symbol: Ca
+	Atomic Number: 20
+	Atomic Mass: 40.077999
+	Type: Alkali Earth Metals (2)
+	State: Solid (2)
+
+.....................................
+
+21. Element:
+	Group: 3
+	Period: 4
+	Name: Scandium
+	Symbol: Sc
+	Atomic Number: 21
+	Atomic Mass: 44.956001
+	Type: Transition Metals (3)
+	State: Solid (2)
+
+.....................................
+
+22. Element:
+	Group: 4
+	Period: 4
+	Name: Titanium
+	Symbol: Ti
+	Atomic Number: 22
+	Atomic Mass: 47.867001
+	Type: Transition Metals (3)
+	State: Solid (2)
+
+.....................................
+
+23. Element:
+	Group: 5
+	Period: 4
+	Name: Vanadium
+	Symbol: V
+	Atomic Number: 23
+	Atomic Mass: 50.942001
+	Type: Transition Metals (3)
+	State: Solid (2)
+
+.....................................
+
+24. Element:
+	Group: 6
+	Period: 4
+	Name: Chromium
+	Symbol: Cr
+	Atomic Number: 24
+	Atomic Mass: 51.995998
+	Type: Transition Metals (3)
+	State: Solid (2)
+
+.....................................
+
+25. Element:
+	Group: 7
+	Period: 4
+	Name: Manganese
+	Symbol: Mn
+	Atomic Number: 25
+	Atomic Mass: 54.938000
+	Type: Transition Metals (3)
+	State: Solid (2)
+
+.....................................
+
+26. Element:
 	Group: 8
 	Period: 4
 	Name: Iron
@@ -74,7 +314,403 @@ PERIODIC TABLE (9 Elements)
 
 .....................................
 
-7. Element:
+27. Element:
+	Group: 9
+	Period: 4
+	Name: Cobalt
+	Symbol: Co
+	Atomic Number: 27
+	Atomic Mass: 58.932999
+	Type: Transition Metals (3)
+	State: Solid (2)
+
+.....................................
+
+28. Element:
+	Group: 10
+	Period: 4
+	Name: Nickel
+	Symbol: Ni
+	Atomic Number: 28
+	Atomic Mass: 58.693001
+	Type: Transition Metals (3)
+	State: Solid (2)
+
+.....................................
+
+29. Element:
+	Group: 11
+	Period: 4
+	Name: Copper
+	Symbol: Cu
+	Atomic Number: 29
+	Atomic Mass: 63.546001
+	Type: Transition Metals (3)
+	State: Solid (2)
+
+.....................................
+
+30. Element:
+	Group: 12
+	Period: 4
+	Name: Zinc
+	Symbol: Zn
+	Atomic Number: 30
+	Atomic Mass: 65.379997
+	Type: Transition Metals (3)
+	State: Solid (2)
+
+.....................................
+
+31. Element:
+	Group: 13
+	Period: 4
+	Name: Gallium
+	Symbol: Ga
+	Atomic Number: 31
+	Atomic Mass: 69.723000
+	Type: Transition Metals (3)
+	State: Solid (2)
+
+.....................................
+
+32. Element:
+	Group: 14
+	Period: 4
+	Name: Germanium
+	Symbol: Ge
+	Atomic Number: 32
+	Atomic Mass: 72.629997
+	Type: Semimetals (4)
+	State: Solid (2)
+
+.....................................
+
+33. Element:
+	Group: 15
+	Period: 4
+	Name: Arsenic
+	Symbol: As
+	Atomic Number: 33
+	Atomic Mass: 72.921997
+	Type: Semimetals (4)
+	State: Solid (2)
+
+.....................................
+
+34. Element:
+	Group: 16
+	Period: 4
+	Name: Selenium
+	Symbol: Se
+	Atomic Number: 34
+	Atomic Mass: 78.971001
+	Type: Non-Metals (5)
+	State: Solid (2)
+
+.....................................
+
+35. Element:
+	Group: 17
+	Period: 4
+	Name: Bromine
+	Symbol: Br
+	Atomic Number: 35
+	Atomic Mass: 79.903999
+	Type: Non-Metals (5)
+	State: Liquid (1)
+
+.....................................
+
+36. Element:
+	Group: 18
+	Period: 4
+	Name: Krypton
+	Symbol: Kr
+	Atomic Number: 36
+	Atomic Mass: 83.797997
+	Type: Noble Gases (0)
+	State: Gas (0)
+
+.....................................
+
+37. Element:
+	Group: 1
+	Period: 5
+	Name: Rubidium
+	Symbol: Rb
+	Atomic Number: 37
+	Atomic Mass: 85.468002
+	Type: Alkali Metals (1)
+	State: Solid (2)
+
+.....................................
+
+38. Element:
+	Group: 2
+	Period: 5
+	Name: Strontium
+	Symbol: Sr
+	Atomic Number: 38
+	Atomic Mass: 87.620003
+	Type: Alkali Earth Metals (2)
+	State: Solid (2)
+
+.....................................
+
+39. Element:
+	Group: 3
+	Period: 5
+	Name: Yttrium
+	Symbol: Y
+	Atomic Number: 39
+	Atomic Mass: 88.905998
+	Type: Transition Metals (3)
+	State: Solid (2)
+
+.....................................
+
+40. Element:
+	Group: 4
+	Period: 5
+	Name: Zirconium
+	Symbol: Zr
+	Atomic Number: 40
+	Atomic Mass: 91.223999
+	Type: Transition Metals (3)
+	State: Solid (2)
+
+.....................................
+
+41. Element:
+	Group: 5
+	Period: 5
+	Name: Niobium
+	Symbol: Nb
+	Atomic Number: 41
+	Atomic Mass: 92.905998
+	Type: Transition Metals (3)
+	State: Solid (2)
+
+.....................................
+
+42. Element:
+	Group: 6
+	Period: 5
+	Name: Molybdenum
+	Symbol: Mo
+	Atomic Number: 42
+	Atomic Mass: 95.949997
+	Type: Transition Metals (3)
+	State: Solid (2)
+
+.....................................
+
+43. Element:
+	Group: 7
+	Period: 5
+	Name: Technetium
+	Symbol: Tc
+	Atomic Number: 43
+	Atomic Mass: 98.000000
+	Type: Transition Metals (3)
+	State: Synthetic (3)
+
+.....................................
+
+44. Element:
+	Group: 8
+	Period: 5
+	Name: Ruthenium
+	Symbol: Ru
+	Atomic Number: 44
+	Atomic Mass: 101.070000
+	Type: Transition Metals (3)
+	State: Solid (2)
+
+.....................................
+
+45. Element:
+	Group: 9
+	Period: 5
+	Name: Rhodium
+	Symbol: Rh
+	Atomic Number: 45
+	Atomic Mass: 102.910004
+	Type: Transition Metals (3)
+	State: Solid (2)
+
+.....................................
+
+46. Element:
+	Group: 10
+	Period: 5
+	Name: Palladium
+	Symbol: Pd
+	Atomic Number: 46
+	Atomic Mass: 106.419998
+	Type: Transition Metals (3)
+	State: Solid (2)
+
+.....................................
+
+47. Element:
+	Group: 11
+	Period: 5
+	Name: Silver
+	Symbol: Ag
+	Atomic Number: 47
+	Atomic Mass: 107.870003
+	Type: Transition Metals (3)
+	State: Solid (2)
+
+.....................................
+
+48. Element:
+	Group: 12
+	Period: 5
+	Name: Cadmium
+	Symbol: Cd
+	Atomic Number: 48
+	Atomic Mass: 112.410004
+	Type: Other Metals (6)
+	State: Solid (2)
+
+.....................................
+
+49. Element:
+	Group: 13
+	Period: 5
+	Name: Indium
+	Symbol: In
+	Atomic Number: 49
+	Atomic Mass: 114.820000
+	Type: Other Metals (6)
+	State: Solid (2)
+
+.....................................
+
+50. Element:
+	Group: 14
+	Period: 5
+	Name: Tin
+	Symbol: Sn
+	Atomic Number: 50
+	Atomic Mass: 118.709999
+	Type: Other Metals (6)
+	State: Solid (2)
+
+.....................................
+
+51. Element:
+	Group: 15
+	Period: 5
+	Name: Antimony
+	Symbol: Sb
+	Atomic Number: 51
+	Atomic Mass: 121.760002
+	Type: Semimetals (4)
+	State: Solid (2)
+
+.....................................
+
+52. Element:
+	Group: 16
+	Period: 5
+	Name: Tellurium
+	Symbol: Te
+	Atomic Number: 52
+	Atomic Mass: 127.599998
+	Type: Semimetals (4)
+	State: Solid (2)
+
+.....................................
+
+53. Element:
+	Group: 17
+	Period: 5
+	Name: Iodine
+	Symbol: I
+	Atomic Number: 53
+	Atomic Mass: 126.900002
+	Type: Non-Metals (5)
+	State: Solid (2)
+
+.....................................
+
+54. Element:
+	Group: 18
+	Period: 5
+	Name: Xenon
+	Symbol: Xe
+	Atomic Number: 54
+	Atomic Mass: 131.289993
+	Type: Noble Gases (0)
+	State: Gas (0)
+
+.....................................
+
+55. Element:
+	Group: 1
+	Period: 6
+	Name: Caesium
+	Symbol: Cs
+	Atomic Number: 55
+	Atomic Mass: 132.910004
+	Type: Alkali Metals (1)
+	State: Solid (2)
+
+.....................................
+
+56. Element:
+	Group: 2
+	Period: 6
+	Name: Barium
+	Symbol: Ba
+	Atomic Number: 56
+	Atomic Mass: 137.330002
+	Type: Alkali Earth Metals (2)
+	State: Solid (2)
+
+.....................................
+
+57. Element:
+	Group: 3
+	Period: 6
+	Name: Lanthanum
+	Symbol: La
+	Atomic Number: 57
+	Atomic Mass: 138.910004
+	Type: Lanthanides (7)
+	State: Solid (2)
+
+.....................................
+
+58. Element:
+	Group: 3
+	Period: 6
+	Name: Cerium
+	Symbol: Ce
+	Atomic Number: 58
+	Atomic Mass: 140.119995
+	Type: Lanthanides (7)
+	State: Solid (2)
+
+.....................................
+
+59. Element:
+	Group: 3
+	Period: 6
+	Name: Praseodymium
+	Symbol: Pr
+	Atomic Number: 59
+	Atomic Mass: 140.910004
+	Type: Lanthanides (7)
+	State: Solid (2)
+
+.....................................
+
+60. Element:
 	Group: 3
 	Period: 6
 	Name: Neodymium
@@ -86,7 +722,235 @@ PERIODIC TABLE (9 Elements)
 
 .....................................
 
-8. Element:
+61. Element:
+	Group: 3
+	Period: 6
+	Name: Promethium
+	Symbol: Pm
+	Atomic Number: 61
+	Atomic Mass: 145.000000
+	Type: Lanthanides (7)
+	State: Solid (2)
+
+.....................................
+
+62. Element:
+	Group: 3
+	Period: 6
+	Name: Samarium
+	Symbol: Sm
+	Atomic Number: 62
+	Atomic Mass: 150.360001
+	Type: Lanthanides (7)
+	State: Solid (2)
+
+.....................................
+
+63. Element:
+	Group: 3
+	Period: 6
+	Name: Europium
+	Symbol: Eu
+	Atomic Number: 63
+	Atomic Mass: 151.250000
+	Type: Lanthanides (7)
+	State: Solid (2)
+
+.....................................
+
+64. Element:
+	Group: 3
+	Period: 6
+	Name: Gadolinium
+	Symbol: Gd
+	Atomic Number: 64
+	Atomic Mass: 157.250000
+	Type: Lanthanides (7)
+	State: Solid (2)
+
+.....................................
+
+65. Element:
+	Group: 3
+	Period: 6
+	Name: Terbium
+	Symbol: Tb
+	Atomic Number: 65
+	Atomic Mass: 158.929993
+	Type: Lanthanides (7)
+	State: Solid (2)
+
+.....................................
+
+66. Element:
+	Group: 3
+	Period: 6
+	Name: Dysprosium
+	Symbol: Dy
+	Atomic Number: 66
+	Atomic Mass: 162.500000
+	Type: Lanthanides (7)
+	State: Solid (2)
+
+.....................................
+
+67. Element:
+	Group: 3
+	Period: 6
+	Name: Holmium
+	Symbol: Ho
+	Atomic Number: 67
+	Atomic Mass: 164.929993
+	Type: Lanthanides (7)
+	State: Solid (2)
+
+.....................................
+
+68. Element:
+	Group: 3
+	Period: 6
+	Name: Erbium
+	Symbol: Er
+	Atomic Number: 68
+	Atomic Mass: 167.250000
+	Type: Lanthanides (7)
+	State: Solid (2)
+
+.....................................
+
+69. Element:
+	Group: 3
+	Period: 6
+	Name: Thulium
+	Symbol: Tm
+	Atomic Number: 69
+	Atomic Mass: 168.929993
+	Type: Lanthanides (7)
+	State: Solid (2)
+
+.....................................
+
+70. Element:
+	Group: 3
+	Period: 6
+	Name: Ytterbium
+	Symbol: Yb
+	Atomic Number: 70
+	Atomic Mass: 173.050003
+	Type: Lanthanides (7)
+	State: Solid (2)
+
+.....................................
+
+71. Element:
+	Group: 3
+	Period: 6
+	Name: Lutetium
+	Symbol: Lu
+	Atomic Number: 71
+	Atomic Mass: 174.970001
+	Type: Lanthanides (7)
+	State: Solid (2)
+
+.....................................
+
+72. Element:
+	Group: 4
+	Period: 6
+	Name: Hafnium
+	Symbol: Hf
+	Atomic Number: 72
+	Atomic Mass: 178.490005
+	Type: Transition Metals (3)
+	State: Solid (2)
+
+.....................................
+
+73. Element:
+	Group: 5
+	Period: 6
+	Name: Tantalum
+	Symbol: Ta
+	Atomic Number: 73
+	Atomic Mass: 180.949997
+	Type: Transition Metals (3)
+	State: Solid (2)
+
+.....................................
+
+74. Element:
+	Group: 6
+	Period: 6
+	Name: Tungsten
+	Symbol: W
+	Atomic Number: 74
+	Atomic Mass: 183.839996
+	Type: Transition Metals (3)
+	State: Solid (2)
+
+.....................................
+
+75. Element:
+	Group: 7
+	Period: 6
+	Name: Rhenium
+	Symbol: Re
+	Atomic Number: 75
+	Atomic Mass: 186.210007
+	Type: Transition Metals (3)
+	State: Solid (2)
+
+.....................................
+
+76. Element:
+	Group: 8
+	Period: 6
+	Name: Osmium
+	Symbol: Os
+	Atomic Number: 76
+	Atomic Mass: 190.229996
+	Type: Transition Metals (3)
+	State: Solid (2)
+
+.....................................
+
+77. Element:
+	Group: 9
+	Period: 6
+	Name: Iridium
+	Symbol: Ir
+	Atomic Number: 77
+	Atomic Mass: 192.220001
+	Type: Transition Metals (3)
+	State: Solid (2)
+
+.....................................
+
+78. Element:
+	Group: 10
+	Period: 6
+	Name: Platinum
+	Symbol: Pt
+	Atomic Number: 78
+	Atomic Mass: 195.080002
+	Type: Transition Metals (3)
+	State: Solid (2)
+
+.....................................
+
+79. Element:
+	Group: 11
+	Period: 6
+	Name: Gold
+	Symbol: Au
+	Atomic Number: 79
+	Atomic Mass: 196.970001
+	Type: Transition Metals (3)
+	State: Solid (2)
+
+.....................................
+
+80. Element:
 	Group: 12
 	Period: 6
 	Name: Mercury
@@ -98,7 +962,139 @@ PERIODIC TABLE (9 Elements)
 
 .....................................
 
-9. Element:
+81. Element:
+	Group: 13
+	Period: 6
+	Name: Thallium
+	Symbol: Tl
+	Atomic Number: 81
+	Atomic Mass: 204.380005
+	Type: Other Metals (6)
+	State: Solid (2)
+
+.....................................
+
+82. Element:
+	Group: 14
+	Period: 6
+	Name: Lead
+	Symbol: Pb
+	Atomic Number: 82
+	Atomic Mass: 207.199997
+	Type: Other Metals (6)
+	State: Solid (2)
+
+.....................................
+
+83. Element:
+	Group: 15
+	Period: 6
+	Name: Bismuth
+	Symbol: Bi
+	Atomic Number: 83
+	Atomic Mass: 208.979996
+	Type: Other Metals (6)
+	State: Solid (2)
+
+.....................................
+
+84. Element:
+	Group: 16
+	Period: 6
+	Name: Polonium
+	Symbol: Po
+	Atomic Number: 84
+	Atomic Mass: 210.000000
+	Type: Semimetals (4)
+	State: Solid (2)
+
+.....................................
+
+85. Element:
+	Group: 17
+	Period: 6
+	Name: Astatine
+	Symbol: At
+	Atomic Number: 85
+	Atomic Mass: 210.000000
+	Type: Halogens (9)
+	State: Solid (2)
+
+.....................................
+
+86. Element:
+	Group: 18
+	Period: 6
+	Name: Radon
+	Symbol: Rn
+	Atomic Number: 86
+	Atomic Mass: 220.000000
+	Type: Noble Gases (0)
+	State: Gas (0)
+
+.....................................
+
+87. Element:
+	Group: 1
+	Period: 7
+	Name: Francium
+	Symbol: Fr
+	Atomic Number: 87
+	Atomic Mass: 223.000000
+	Type: Alkali Metals (1)
+	State: Solid (2)
+
+.....................................
+
+88. Element:
+	Group: 2
+	Period: 7
+	Name: Radium
+	Symbol: Ra
+	Atomic Number: 88
+	Atomic Mass: 226.000000
+	Type: Alkali Earth Metals (2)
+	State: Solid (2)
+
+.....................................
+
+89. Element:
+	Group: 3
+	Period: 7
+	Name: Actinium
+	Symbol: Ac
+	Atomic Number: 89
+	Atomic Mass: 227.000000
+	Type: Actinides (8)
+	State: Solid (2)
+
+.....................................
+
+90. Element:
+	Group: 3
+	Period: 7
+	Name: Thorium
+	Symbol: Th
+	Atomic Number: 90
+	Atomic Mass: 232.039993
+	Type: Actinides (8)
+	State: Solid (2)
+
+.....................................
+
+91. Element:
+	Group: 3
+	Period: 7
+	Name: Protactinium
+	Symbol: Pa
+	Atomic Number: 91
+	Atomic Mass: 231.039993
+	Type: Actinides (8)
+	State: Solid (2)
+
+.....................................
+
+92. Element:
 	Group: 3
 	Period: 7
 	Name: Uranium
@@ -107,6 +1103,318 @@ PERIODIC TABLE (9 Elements)
 	Atomic Mass: 238.029999
 	Type: Actinides (8)
 	State: Solid (2)
+
+.....................................
+
+93. Element:
+	Group: 3
+	Period: 7
+	Name: Neptunium
+	Symbol: Np
+	Atomic Number: 93
+	Atomic Mass: 237.000000
+	Type: Actinides (8)
+	State: Solid (2)
+
+.....................................
+
+94. Element:
+	Group: 3
+	Period: 7
+	Name: Plutonium
+	Symbol: Pu
+	Atomic Number: 94
+	Atomic Mass: 244.000000
+	Type: Actinides (8)
+	State: Solid (2)
+
+.....................................
+
+95. Element:
+	Group: 3
+	Period: 7
+	Name: Americium
+	Symbol: Am
+	Atomic Number: 95
+	Atomic Mass: 243.000000
+	Type: Actinides (8)
+	State: Solid (2)
+
+.....................................
+
+96. Element:
+	Group: 3
+	Period: 7
+	Name: Curium
+	Symbol: Cm
+	Atomic Number: 96
+	Atomic Mass: 247.000000
+	Type: Actinides (8)
+	State: Solid (2)
+
+.....................................
+
+97. Element:
+	Group: 3
+	Period: 7
+	Name: Berkelium
+	Symbol: Bk
+	Atomic Number: 97
+	Atomic Mass: 247.000000
+	Type: Actinides (8)
+	State: Solid (2)
+
+.....................................
+
+98. Element:
+	Group: 3
+	Period: 7
+	Name: Californium
+	Symbol: Cf
+	Atomic Number: 98
+	Atomic Mass: 251.000000
+	Type: Actinides (8)
+	State: Solid (2)
+
+.....................................
+
+99. Element:
+	Group: 3
+	Period: 7
+	Name: Einsteinium
+	Symbol: Es
+	Atomic Number: 99
+	Atomic Mass: 252.000000
+	Type: Actinides (8)
+	State: Solid (2)
+
+.....................................
+
+100. Element:
+	Group: 3
+	Period: 7
+	Name: Fermium
+	Symbol: Fm
+	Atomic Number: 100
+	Atomic Mass: 257.000000
+	Type: Actinides (8)
+	State: Solid (2)
+
+.....................................
+
+101. Element:
+	Group: 3
+	Period: 7
+	Name: Mendelevium
+	Symbol: Md
+	Atomic Number: 101
+	Atomic Mass: 258.000000
+	Type: Actinides (8)
+	State: Solid (2)
+
+.....................................
+
+102. Element:
+	Group: 3
+	Period: 7
+	Name: Nobelium
+	Symbol: No
+	Atomic Number: 102
+	Atomic Mass: 259.000000
+	Type: Actinides (8)
+	State: Solid (2)
+
+.....................................
+
+103. Element:
+	Group: 3
+	Period: 7
+	Name: Lawrencium
+	Symbol: Lr
+	Atomic Number: 103
+	Atomic Mass: 262.000000
+	Type: Actinides (8)
+	State: Solid (2)
+
+.....................................
+
+104. Element:
+	Group: 4
+	Period: 7
+	Name: Rutherfordium
+	Symbol: Rf
+	Atomic Number: 104
+	Atomic Mass: 261.000000
+	Type: Transition Metals (3)
+	State: Synthetic (3)
+
+.....................................
+
+105. Element:
+	Group: 5
+	Period: 7
+	Name: Dubnium
+	Symbol: Db
+	Atomic Number: 105
+	Atomic Mass: 262.000000
+	Type: Transition Metals (3)
+	State: Synthetic (3)
+
+.....................................
+
+106. Element:
+	Group: 6
+	Period: 7
+	Name: Seaborgium
+	Symbol: Sg
+	Atomic Number: 106
+	Atomic Mass: 266.000000
+	Type: Transition Metals (3)
+	State: Synthetic (3)
+
+.....................................
+
+107. Element:
+	Group: 7
+	Period: 7
+	Name: Bohrium
+	Symbol: Bh
+	Atomic Number: 107
+	Atomic Mass: 264.000000
+	Type: Transition Metals (3)
+	State: Synthetic (3)
+
+.....................................
+
+108. Element:
+	Group: 8
+	Period: 7
+	Name: Hassium
+	Symbol: Hs
+	Atomic Number: 108
+	Atomic Mass: 277.000000
+	Type: Transition Metals (3)
+	State: Synthetic (3)
+
+.....................................
+
+109. Element:
+	Group: 9
+	Period: 7
+	Name: Meitnerium
+	Symbol: Mt
+	Atomic Number: 109
+	Atomic Mass: 268.000000
+	Type: Transition Metals (3)
+	State: Synthetic (3)
+
+.....................................
+
+110. Element:
+	Group: 10
+	Period: 7
+	Name: Darmstadtium
+	Symbol: Ds
+	Atomic Number: 110
+	Atomic Mass: 271.000000
+	Type: Transition Metals (3)
+	State: Synthetic (3)
+
+.....................................
+
+111. Element:
+	Group: 11
+	Period: 7
+	Name: Roentgenium
+	Symbol: Rg
+	Atomic Number: 111
+	Atomic Mass: 272.000000
+	Type: Transition Metals (3)
+	State: Synthetic (3)
+
+.....................................
+
+112. Element:
+	Group: 12
+	Period: 7
+	Name: Copernicium
+	Symbol: Cn
+	Atomic Number: 112
+	Atomic Mass: 285.000000
+	Type: Transition Metals (3)
+	State: Synthetic (3)
+
+.....................................
+
+113. Element:
+	Group: 13
+	Period: 7
+	Name: Nihonium
+	Symbol: Nh
+	Atomic Number: 113
+	Atomic Mass: 284.000000
+	Type: Other Metals (6)
+	State: Synthetic (3)
+
+.....................................
+
+114. Element:
+	Group: 14
+	Period: 7
+	Name: Flerovium
+	Symbol: Fl
+	Atomic Number: 114
+	Atomic Mass: 289.000000
+	Type: Other Metals (6)
+	State: Synthetic (3)
+
+.....................................
+
+115. Element:
+	Group: 15
+	Period: 7
+	Name: Moscovium
+	Symbol: Mc
+	Atomic Number: 115
+	Atomic Mass: 288.000000
+	Type: Other Metals (6)
+	State: Synthetic (3)
+
+.....................................
+
+116. Element:
+	Group: 16
+	Period: 7
+	Name: Livermorium
+	Symbol: Lv
+	Atomic Number: 116
+	Atomic Mass: 292.000000
+	Type: Other Metals (6)
+	State: Synthetic (3)
+
+.....................................
+
+117. Element:
+	Group: 17
+	Period: 7
+	Name: Tennessine
+	Symbol: Ts
+	Atomic Number: 117
+	Atomic Mass: 294.000000
+	Type: Halogens (9)
+	State: Synthetic (3)
+
+.....................................
+
+118. Element:
+	Group: 118
+	Period: 7
+	Name: Oganesson
+	Symbol: Og
+	Atomic Number: 118
+	Atomic Mass: 294.000000
+	Type: Noble Gases (0)
+	State: Synthetic (3)
 
 .....................................
 
