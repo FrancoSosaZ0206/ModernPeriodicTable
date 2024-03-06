@@ -21,7 +21,12 @@ int main()
 	do
 	{
 		system("cls");
-		printMenu("MAIN MENU", true, 2,
+		printf("         -------------------\n");
+		printf("       ***********************\n");
+		printf("        Modern Periodic Table\n");
+		printf("       ***********************\n");
+		printf("         -------------------\n\n\n\n");
+		printMenu("\tMAIN MENU", true, 2,
 			"Create new table",
 			"Load existing table");
 
@@ -95,7 +100,9 @@ int main()
 						char symbolBuffer[4] = "";
 						int atomicNum = 0;
 						float mass = 0.0f;
-						elemType eType = -1;
+						unsigned int elemCtg = 0;
+						majorCtg major = -1;
+						minorCtg minor = -1;
 						elemState eState = -1;
 
 						int eTypeOp = -1,
@@ -115,18 +122,81 @@ int main()
 						scanf("%d, %f", &atomicNum, &mass);
 						clrBuffer();
 
-						printf("\n\nSelect the type of the new element:\n");
-						elementTypes_Menu();
+						printf("\n\nSelect the category of the new element:\n");
+						elementCategories_Menu();
 						do
 						{
-							scanf("%d", &eTypeOp);
+							scanf("%u", &elemCtg);
 							clrBuffer();
-						} while (eTypeOp < 1 || eTypeOp > 11);
-						eType = eTypeOp - 1;
+						} while (elemCtg < 1 || elemCtg > 10);
 
-						if (eType == NobleGases)
-							eState = Gas;
-						else
+						// We'll also assign states in some cases. Can be changed in "Find Element" menu.
+						switch (elemCtg)
+						{
+							case 1:
+							{
+								major = Metalloids;
+								break;
+							}
+							case 2:
+							{
+								major = Metals;
+								minor = Alkali;
+								break;
+							}
+							case 3:
+							{
+								major = Metals;
+								minor = AlkaliEarth;
+								break;
+							}
+							case 4:
+							{
+								major = Metals;
+								minor = Transition;
+								break;
+							}
+							case 5:
+							{
+								major = Metals;
+								minor = PostTransition;
+								break;
+							}
+							case 6:
+							{
+								major = NonMetals;
+								minor = Halogens;
+								eState = Gas;
+								break;
+							}
+							case 7:
+							{
+								major = NonMetals;
+								minor = NobleGases;
+								break;
+							}
+							case 8:
+							{
+								major = Metals;
+								minor = Lanthanides;
+								eState = Solid;
+								break;
+							}
+							case 9:
+							{
+								major = Metals;
+								minor = Actinides;
+								eState = Solid;
+								break;
+							}
+							case 10:
+							{
+								major = UNKNOWN;
+								break;
+							}
+						}
+
+						if (eState != -1)
 						{
 							printf("\n\nSelect the aggregation state of the new element:\n");
 							elementStates_Menu();
@@ -138,7 +208,7 @@ int main()
 							eState = eStateOp - 1;
 						}
 
-						Element* newElem = newElement(group, period, nameBuffer, symbolBuffer, atomicNum, mass, eType, eState);
+						Element* newElem = newElement(group, period, nameBuffer, symbolBuffer, atomicNum, mass, major, minor, eState);
 						if (!addElement(table, newElem)) exit(1);
 						system("cls");
 						printf("Element added successfully.");
@@ -178,12 +248,13 @@ int main()
 
 							printf("(*): Go to 'Table Management' -> 'Show Table' to see it.\n\n");
 
-							printMenu("FIND ELEMENT", false, 7,
+							printMenu("FIND ELEMENT", false, 8,
 								"By name",
 								"By chemical symbol",
 								"By atomic number",
 								"By atomic mass",
-								"By type",
+								"By major category",
+								"By minor category",
 								"By state of aggregation",
 								"By index (*)");
 							scanf("%d", &op[2]);
@@ -235,16 +306,30 @@ int main()
 								}
 								case 5:
 								{
-									elemType eType = -1;
-									printf("FIND ELEMENT BY TYPE\n\n");
-									showElementTypes();
-									printf("Insert target element's type: ");
-									scanf("%d", &eType);
+									majorCtg major = -1;
+									printf("FIND ELEMENT BY MAJOR CATEGORY\n\n");
+									showElementCategories(2);
+									printf("Insert target element's major category: ");
+									scanf("%d", &major);
 									clrBuffer();
-									found = findElement(table, Type, &eType);
+									found = findElement(table, MajorCtg, &major);
 									break;
 								}
 								case 6:
+								{
+									minorCtg minor = -1;
+									printf("FIND ELEMENT BY MINOR CATEGORY\n\n");
+									showElementCategories(3);
+									printf("NONE ............. -1\n");
+									printf("**************************\n\n");
+
+									printf("Insert target element's minor category: ");
+									scanf("%d", &minor);
+									clrBuffer();
+									found = findElement(table, MinorCtg, &minor);
+									break;
+								}
+								case 7:
 								{
 									elemState eState = -1;
 									printf("FIND ELEMENT BY STATE OF AGGREGATION\n\n");
@@ -255,7 +340,7 @@ int main()
 									found = findElement(table, State, &eState);
 									break;
 								}
-								case 7:
+								case 8:
 								{
 									int index = 0;
 									printf("FIND ELEMENT BY INDEX (INTERNAL)\n\n");
@@ -291,14 +376,15 @@ int main()
 									{
 										system("cls");
 										showElement(found);
-										printMenu("ACTIONS", false, 9,
+										printMenu("ACTIONS", false, 10,
 											"Edit group",
 											"Edit period",
 											"Edit name",
 											"Edit symbol",
 											"Edit atomic number",
 											"Edit atomic mass",
-											"Edit type",
+											"Edit major category",
+											"Edit minor category",
 											"Edit state of aggregation",
 											"Remove element from table");
 										scanf("%d", &op[4]);
@@ -376,26 +462,49 @@ int main()
 											}
 											case 7:
 											{
-												elemType newEtype = -1;
-												int eTypeOp = -1;
+												majorCtg newMajor = -1;
+												int newMajorOp = -1;
 
 												do
 												{
-													showElementTypes();
-													printf("Select new type: ");
-													scanf("%d", &eTypeOp);
+													showElementCatergories(2);
+													printf("Select new major category: ");
+													scanf("%d", &newMajorOp);
 													clrBuffer();
 													system("cls");
-												} while (eTypeOp < 0 || eTypeOp > 10);
+												} while (newMajorOp < 0 || newMajorOp > 10);
 
-												newEtype = eTypeOp - 1;
-												setElementType(found, newEtype);
-												printf("\n\nElement type edited successfully.");
+												newMajor = newMajorOp - 1;
+												setElementMajorCtg(found, newMajor);
+												printf("\n\nElement major category edited successfully.");
 												promptEnter();
 
 												break;
 											}
 											case 8:
+											{
+												minorCtg newMinor = -1;
+												int newMinorOp = -1;
+
+												do
+												{
+													showElementCatergories(3);
+													printf("NONE ............. -1\n");
+													printf("**************************\n\n");
+													printf("Select new minor category: ");
+													scanf("%d", &newMinorOp);
+													clrBuffer();
+													system("cls");
+												} while (newMinorOp < 0 || newMinorOp > 10);
+
+												newMinor = newMinorOp - 1;
+												setElementMinorCtg(found, newMinor);
+												printf("\n\nElement minor category edited successfully.");
+												promptEnter();
+
+												break;
+											}
+											case 9:
 											{
 												elemState newEstate = -1;
 												int eStateOp = -1;
@@ -416,7 +525,7 @@ int main()
 
 												break;
 											}
-											case 9:
+											case 10:
 											{
 												bool confirm = false;
 												int confirmOp = -1;
@@ -480,12 +589,13 @@ int main()
 
 							printf("(*): Go to 'Table Management' -> 'Show Table' to see it.\n\n");
 
-							printMenu("SELECT ELEMENT", false, 7,
+							printMenu("SELECT ELEMENT", false, 8,
 								"By name",
 								"By chemical symbol",
 								"By atomic number",
 								"By atomic mass",
-								"By type",
+								"By major category",
+								"By minor category",
 								"By state of aggregation",
 								"By index (*)");
 							scanf("%d", &op[2]);
@@ -537,16 +647,30 @@ int main()
 								}
 								case 5:
 								{
-									elemType eType = -1;
-									printf("SELECT ELEMENT BY TYPE\n\n");
-									showElementTypes();
-									printf("Insert target element's type: ");
-									scanf("%d", &eType);
+									majorCtg major = -1;
+									printf("SELECT ELEMENT BY MAJOR CATEGORY\n\n");
+									showElementCategories(2);
+									printf("Insert target element's major category: ");
+									scanf("%d", &major);
 									clrBuffer();
-									found = findElement(table, Type, &eType);
+									found = findElement(table, MajorCtg, &major);
 									break;
 								}
 								case 6:
+								{
+									minorCtg minor = -1;
+									printf("SELECT ELEMENT BY MINOR CATEGORY\n\n");
+									showElementCategories(3);
+									printf("NONE ............. -1\n");
+									printf("**************************\n\n");
+
+									printf("Insert target element's minor category: ");
+									scanf("%d", &minor);
+									clrBuffer();
+									found = findElement(table, MinorCtg, &minor);
+									break;
+								}
+								case 7:
 								{
 									elemState eState = -1;
 									printf("SELECT ELEMENT BY STATE OF AGGREGATION\n\n");
@@ -557,7 +681,7 @@ int main()
 									found = findElement(table, State, &eState);
 									break;
 								}
-								case 7:
+								case 8:
 								{
 									int index = 0;
 									printf("SELECT ELEMENT BY INDEX (INTERNAL)\n\n");
@@ -606,7 +730,7 @@ int main()
 									printf("Element couldn't be found.");
 								else
 								{
-									addElement(selected, found);
+									pushList(selected, found);
 									printf("Element found!");
 								}
 								promptEnter();
@@ -635,7 +759,6 @@ int main()
 							promptEnter();
 
 							delPtable(&selected, false);
-
 						}
 						break;
 					}

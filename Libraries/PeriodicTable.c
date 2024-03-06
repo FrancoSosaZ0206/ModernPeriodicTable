@@ -31,9 +31,13 @@ bool matchElementMass(float* mass, Element* elem)
 {
 	return *mass == getElementMass(elem);
 }
-bool matchElementType(elemType* type, Element* elem)
+bool matchElementMajorCtg(majorCtg* major, Element* elem)
 {
-	return *type == getElementType(elem);
+	return *major == getElementMajorCtg(elem);
+}
+bool matchElementMinorCtg(minorCtg* minor, Element* elem)
+{
+	return *minor == getElementMinorCtg(elem);
 }
 bool matchElementState(elemState* state, Element* elem)
 {
@@ -155,27 +159,30 @@ Element* findElement(Ptable* self, elemAttribute attr, void* attrValue)
 	{
 		switch (attr)
 		{
-		case Name:
-			targetElem = findList(self, attrValue, matchElementName);
-			break;
-		case Symbol:
-			targetElem = findList(self, attrValue, matchElementSymbol);
-			break;
-		case AtomicNum:
-			targetElem = findList(self, attrValue, matchElementAtomicNum);
-			break;
-		case Mass:
-			targetElem = findList(self, attrValue, matchElementMass);
-			break;
-		case Type:
-			targetElem = findList(self, attrValue, matchElementType);
-			break;
-		case State:
-			targetElem = findList(self, attrValue, matchElementState);
-			break;
-		default:
-			exit(1);
-			break;
+			case Name:
+				targetElem = findList(self, attrValue, matchElementName);
+				break;
+			case Symbol:
+				targetElem = findList(self, attrValue, matchElementSymbol);
+				break;
+			case AtomicNum:
+				targetElem = findList(self, attrValue, matchElementAtomicNum);
+				break;
+			case Mass:
+				targetElem = findList(self, attrValue, matchElementMass);
+				break;
+			case MajorCtg:
+				targetElem = findList(self, attrValue, matchElementMajorCtg);
+				break;
+			case MinorCtg:
+				targetElem = findList(self, attrValue, matchElementMinorCtg);
+				break;
+			case State:
+				targetElem = findList(self, attrValue, matchElementState);
+				break;
+			default:
+				exit(1);
+				break;
 		}
 	}
 

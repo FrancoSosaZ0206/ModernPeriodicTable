@@ -25,6 +25,9 @@
     <Filter Include="Archivos de recursos\Saved Files\default">
       <UniqueIdentifier>{348df8ee-b1df-4c50-a950-73620a1602d8}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Archivos de recursos\Saved Files\backups">
+      <UniqueIdentifier>{1b81fcc9-c4e1-4960-9f8d-0d96655c8e09}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="Resources\Planning and Management\futureImprovements.txt">
@@ -36,17 +39,17 @@
     <Text Include="Resources\Planning and Management\ProjRequirements.txt">
       <Filter>Archivos de recursos\Planning and Management</Filter>
     </Text>
-    <Text Include="Resources\Saved Files\periodicTable.txt">
-      <Filter>Archivos de recursos\Saved Files</Filter>
-    </Text>
     <Text Include="Resources\Menus code structure.txt">
       <Filter>Archivos de recursos</Filter>
     </Text>
-    <Text Include="Resources\Saved Files\default\periodicTable.txt">
-      <Filter>Archivos de recursos\Saved Files\default</Filter>
-    </Text>
     <Text Include="Resources\Planning and Management\to-do.txt">
       <Filter>Archivos de recursos\Planning and Management</Filter>
+    </Text>
+    <Text Include="Resources\Saved Files\fullPtable.txt">
+      <Filter>Archivos de recursos\Saved Files</Filter>
+    </Text>
+    <Text Include="Resources\Saved Files\backups\fullPtable-BACKUP.txt">
+      <Filter>Archivos de recursos\Saved Files\backups</Filter>
     </Text>
   </ItemGroup>
   <ItemGroup>

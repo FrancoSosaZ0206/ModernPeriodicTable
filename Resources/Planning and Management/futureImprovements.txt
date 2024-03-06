@@ -1,7 +1,7 @@
-- Instead of doing a separate list of lanthanides and actinides, we can
+1. Instead of doing a separate list of lanthanides and actinides, we can
   just put those lists in their respective nodes inside the main Element list.
 
-- Colored text capabilities for the different menus (make a library/function that facilitates this)
+2. Colored text capabilities for the different menus (make a library/function that facilitates this)
 	* "printf_Color()" function that accepts a string, a color, and a substring that you want colored
 		! ERROR HANDLING: if substring isn't found in the string or color doesn't exist,
 							stop the program and output an error message.
@@ -15,14 +15,14 @@
 		+ ...
 		+ NULL as sentinel parameter.
 
-- OOP take for future versions: 
+3. OOP take for future versions: 
 	- void pointer to "internals" or "properties" for private class members
 	- function pointers as public methods of the class
 	- constructor and destructor functions will remain as external functions,
 		but constructors will new also initialize class instances, connecting
 		function pointers to each method function
 
-- Make a function that shows the table graphically
+4. Make a function that shows the table graphically
 	*	Elements will be represented with their respective chemical symbol
 	1.	Traverse the table and find the list with the most
 		elements (most groups per period)
@@ -41,13 +41,46 @@
 		periodic table. Could still use it anyways, as doing this manually
 		would be very tedious.
 
-- Saving table into files: implement a small "session" system that remembers the path to the saved file,
+5. Saving table into files: implement a small "session" system that remembers the path to the saved file,
 	so that the user doesn't have to type the full path and name of the file each time they want to
 	save it.
 
-- Saving table into files: make a backup system that creates a separate folder.
+6. Saving table into files: make a backup system that creates a separate folder.
 	The backup files will have the same name as the original,
 	with a special termination word or identifier, something like "-BACKUP".
 
-- Add a "other properties" list of attributes to each element, so that the user can optionally add things
+7. Add a "other properties" list of attributes to each element, so that the user can optionally add things
 	like Electronegativity, oxidation states, etc.
+
+8. Some elements can have two or more types. Change type implementation to a list of types,
+	instead of one type per element.
+
+	! Correction: After researching, I've found out elements only have 2 "metallic" classifications:
+		1. A general classification: Metal, Non Metal and Metalloid
+		2. A specific classification: Transition Metal, Post-Transition Metal, Halogens, Noble Gases, Lanthanides...
+
+		So a better restructuration for elements' metallic properties would be:
+			- general, and
+			- specific
+		And the possible specific properties depend on the general one.
+9. Make a simpler, alternate version/mode of the system in which the elements are fixed by default and non-editable.
+	This would work better for users who only want to quickly consult the table and don't want to bother with
+	adding, removing or editing elements.
+
+	!Maybe, this should be the only mode, or at least the default one. And then, a "Customize table" mode in which
+	you could edit it and add new elements (maybe new elements are discovered, then the table should need an update).
+
+	!Continuing the previous idea, maybe you could enter the "Customize" mode and later set an edited table as default.
+	Internally, the original "Predetermined" table would still be preserved somewhere, so that if you want to go back,
+	you could "Reset to predetermined table".
+
+10. BASED ON 8. --> Convert types into a tree of types. Although it's a bit harder to implement,
+	Element Categories and subcategories follow a hierarchical structure, so this will be the best fit.
+	When adding elements, we could just have a function that prints the type tree's leaves (the most specific subcategories)
+	, so that the more general ones are assigned automatically as a list of tags in the element.
+
+	! The tree nodes will need to have a pointer to its root node, so that we can trace
+	the path to each leaf node back to root.
+
+11. Entry filtering: add filters for certain data so that incorrect values don't leak into the system.
+	- Example: groups and periods cannot be zero or negatives.

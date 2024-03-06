@@ -132,8 +132,8 @@
     <Text Include="Resources\Planning and Management\implementation.txt" />
     <Text Include="Resources\Planning and Management\ProjRequirements.txt" />
     <Text Include="Resources\Planning and Management\to-do.txt" />
-    <Text Include="Resources\Saved Files\default\periodicTable.txt" />
-    <Text Include="Resources\Saved Files\periodicTable.txt" />
+    <Text Include="Resources\Saved Files\backups\fullPtable-BACKUP.txt" />
+    <Text Include="Resources\Saved Files\fullPtable.txt" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\References\Periodic_table_large_ENGLISH.pdf" />

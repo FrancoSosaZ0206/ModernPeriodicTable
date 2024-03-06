@@ -11,6 +11,13 @@
 
 // Definitions
 
+typedef struct elemCtg
+{
+	majorCtg major;
+	minorCtg minor;
+}
+elemCtg; // ctg = category (metal, nonmetal, metalloid, halogen, etc.)
+
 typedef struct Element
 {
 	int group;
@@ -19,27 +26,35 @@ typedef struct Element
 	char symbol[4];
 	int atomicNum;
 	float mass;
-	elemType type;
+	elemCtg category;
 	elemState state;
 }
 Element;
 
-const char* typeStr[] =
+const char* majorCtgStr[] =
 {
-	"Noble Gases",
-	"Alkali Metals",
-	"Alkali Earth Metals",
-	"Transition Metals",
-	"Semimetals",
+	"Metals",
 	"Non-Metals",
-	"Other Metals",
-	"Lanthanides",
-	"Actinides",
-	"Halogens",
-	"Antigens"
+	"Metalloids",
+	"UNKNOWN"
 };
+const int majorCtgCount = 4;
+
+const char* minorCtgStr[] =
+{
+	"Alkali",
+	"AlkaliEarth",
+	"Transition",
+	"PostTransition",
+	"Halogens",
+	"NobleGases",
+	"Lanthanides",
+	"Actinides"
+};
+const int minorCtgCount = 8;
 
 const char* stateStr[] = { "Gas", "Liquid", "Solid", "Synthetic" };
+const int stateCount = 4;
 
 const char* ELEMENT_FORMAT_OUT =
 "Element:\n"
@@ -49,7 +64,9 @@ const char* ELEMENT_FORMAT_OUT =
 "\tSymbol: %s\n"
 "\tAtomic Number: %d\n"
 "\tAtomic Mass: %f\n"
-"\tType: %s (%d)\n"
+"\tCategories:\n"
+"\t\tMajor: %s (%d)\n"
+"\t\tMinor: %s (%d)\n"
 "\tState: %s (%d)\n\n";
 
 const char* ELEMENT_FORMAT_IN =
@@ -60,7 +77,9 @@ const char* ELEMENT_FORMAT_IN =
 "\tSymbol: %[^\n]\n"
 "\tAtomic Number: %d\n"
 "\tAtomic Mass: %f\n"
-"\tType: %[^(] (%d)\n"
+"\tCategories:\n"
+"\t\tMajor: %[^(] (%d)\n"
+"\t\tMinor: %[^(] (%d)\n"
 "\tState: %[^(] (%d)\n\n";
 
 const char* ELEMENT_FORMAT_OUT_SHORT =
@@ -68,7 +87,8 @@ const char* ELEMENT_FORMAT_OUT_SHORT =
 "(%d, %d)\n"
 "Atomic Number: %d\n"
 "Atomic Mass: %f\n"
-"#%s, #%s\n\n";
+"#%s, #%s\n"
+"#%s\n\n";
 
 /// FUNCTIONS
 
@@ -77,7 +97,8 @@ const char* ELEMENT_FORMAT_OUT_SHORT =
 Element* newElement(int group, int period, 
 					char* name, char symbol[4],
 					int atomicNum, float mass,
-					elemType type, elemState state)
+					majorCtg major, minorCtg minor,
+					elemState state)
 {
 	Element* self = malloc(sizeof(Element));
 	
@@ -93,7 +114,10 @@ Element* newElement(int group, int period,
 
 		self->atomicNum = atomicNum;
 		self->mass = mass;
-		self->type = type;
+
+		self->category.major = major;
+		self->category.minor = minor;
+
 		self->state = state;
 	}
 
@@ -138,9 +162,13 @@ void setElementMass(Element* self, float mass)
 {
 	self->mass = mass;
 }
-void setElementType(Element* self, elemType type)
+void setElementMajorCtg(Element* self, majorCtg major)
 {
-	self->type = type;
+	self->category.major = major;
+}
+void setElementMinorCtg(Element* self, minorCtg minor)
+{
+	self->category.minor = minor;
 }
 void setElementState(Element* self, elemState state)
 {
@@ -173,9 +201,13 @@ float getElementMass(Element* self)
 {
 	return self->mass;
 }
-elemType getElementType(Element* self)
+majorCtg getElementMajorCtg(Element* self)
 {
-	return self->type;
+	return self->category.major;
+}
+minorCtg getElementMinorCtg(Element* self)
+{
+	return self->category.minor;
 }
 elemState getElementState(Element* self)
 {
@@ -189,7 +221,8 @@ void showElement_Test(Element* self)
 	printf(ELEMENT_FORMAT_OUT, self->group, self->period,
 		self->name, self->symbol,
 		self->atomicNum, self->mass,
-		self->type, typeStr[self->type],
+		majorCtgStr[self->category.major], self->category.major,
+		self->category.minor == -1 ? "[NONE]" : minorCtgStr[self->category.minor], self->category.minor,
 		self->state, stateStr[self->state]);
 }
 void showElement(Element* self)
@@ -197,7 +230,9 @@ void showElement(Element* self)
 	printf(ELEMENT_FORMAT_OUT_SHORT, self->symbol, self->name,
 			self->group, self->period,
 			self->atomicNum, self->mass,
-			typeStr[self->type], stateStr[self->state]);
+			majorCtgStr[self->category.major],
+			self->category.minor == -1 ? "[NONE]" : minorCtgStr[self->category.minor],
+			stateStr[self->state]);
 }
 
 // Others
@@ -210,7 +245,8 @@ char* elementToString(Element* self)
 	sprintf(buffer, ELEMENT_FORMAT_OUT, self->group, self->period,
 		self->name, self->symbol,
 		self->atomicNum, self->mass,
-		self->type, typeStr[self->type],
+		majorCtgStr[self->category.major], self->category.major,
+		self->category.minor == -1 ? "[NONE]" : minorCtgStr[self->category.minor], self->category.minor,
 		self->state, stateStr[self->state]);
 
 	dest = malloc(sizeof(char) * strlen(buffer) + 1);
@@ -224,7 +260,8 @@ void serializeElement(Element* self, FILE* file)
 	fprintf(file, ELEMENT_FORMAT_OUT, self->group, self->period,
 		self->name, self->symbol,
 		self->atomicNum, self->mass,
-		typeStr[self->type], self->type,
+		majorCtgStr[self->category.major], self->category.major,
+		self->category.minor == -1 ? "[NONE]" : minorCtgStr[self->category.minor], self->category.minor,
 		stateStr[self->state], self->state);
 }
 Element* deserializeElement(FILE* file)
@@ -237,59 +274,90 @@ Element* deserializeElement(FILE* file)
 	char symbolBuffer[4] = "";
 	int atomicNumBuffer = -1;
 	float massBuffer = -1.0f;
-	elemType typeBuffer = -1;
+	majorCtg majorBuffer = -1;
+	minorCtg minorBuffer = -1;
 	elemState stateBuffer = -1;
 
-	char dummyStr[100] = ""; // for the type and state strings
-	char dummyStr2[100] = ""; // for the type and state strings
+	char majorStr[100] = ""; // for the type and state strings
+	char minorStr[100] = ""; // for the type and state strings
+	char stateStr[100] = ""; // for the type and state strings
 
 	// only if it could successfuly deserialize the element and store its attributes in each variable,
 	if(fscanf(file, ELEMENT_FORMAT_IN, &groupBuffer, &periodBuffer,
 									   nameBuffer, symbolBuffer,
 									   &atomicNumBuffer, &massBuffer,
-									   dummyStr, &typeBuffer, dummyStr2, &stateBuffer))
+									   majorStr, &majorBuffer,
+									   minorStr, &majorBuffer,
+									   stateStr, &stateBuffer))
 		// we load it in memory
 		deserialized = newElement(groupBuffer, periodBuffer,
 								  nameBuffer, symbolBuffer,
 								  atomicNumBuffer, massBuffer,
-								  typeBuffer, stateBuffer);
+								  majorBuffer, minorBuffer,
+								  stateBuffer);
 
 	return deserialized;
 }
 
 
-void showElementTypes()
+void showElementCategories(int mode)
 {
-	printf("TYPES OF ELEMENTS\n");
-	printf("--------------------------\n\n");
+	if (mode < 1 || mode > 3) return;
 
-	for (int i = 0; i < 11; i++)
-		printf("%s ............................. %d\n", typeStr[i], i + 1);
-	printf("--------------------------\n\n");
+	printf("ELEMENT CATEGORIES\n");
+	printf("**************************\n\n");
+
+	if (mode != 3)
+	{
+		printf("Major Categories:\n");
+		printf("--------------------------\n\n");
+		for (int i = 0; i < majorCtgCount; i++)
+			printf("%s ............. %d\n", majorCtgStr[i], i + 1);
+	}
+
+	if (mode != 2)
+	{
+		printf("--------------------------\n\n");
+
+		printf("Minor Categories:\n");
+		printf("--------------------------\n\n");
+		for (int i = 0; i < minorCtgCount; i++)
+			printf("%s ............. %d\n", minorCtgStr[i], i + 1);
+	}
+
+	printf("**************************\n\n");
 }
 void showElementStates()
 {
 	printf("STATES OF AGGREGATION\n");
 	printf("--------------------------\n\n");
-	for (int i = 0; i < 4; i++)
-		printf("%s ............................. %d\n", stateStr[i], i + 1);
+	for (int i = 0; i < stateCount; i++)
+		printf("%s ............. %d\n", stateStr[i], i + 1);
 	printf("--------------------------\n\n");
 }
 
-void elementTypes_Menu()
+void elementCategories_Menu()
 {
-	printf("--------------------------\n\n");
+	printf("**************************\n\n");
 
-	for (int i = 0; i < 11; i++)
-		printf("%s ............................. %d\n", typeStr[i], i + 1);
+	printf("Element Categories:\n");
 	printf("--------------------------\n\n");
-	printf("Select an option: ");
+	
+	printf("Metalloids ............. select '1'\n");
+	for (int i = 0; i < minorCtgCount; i++)
+		printf("%s ............. select '%d'\n", minorCtgStr[i], i + 2);
+
+	printf("--------------------------\n");
+	printf("UNKNOWN ............. select '10'\n\n");
+	printf("**************************\n\n");
+
+	printf("Select an option: \n");
 }
 void elementStates_Menu()
 {
 	printf("--------------------------\n\n");
-	for (int i = 0; i < 4; i++)
-		printf("%s ............................. %d\n", stateStr[i], i + 1);
+	for (int i = 0; i < stateCount; i++)
+		printf("%s ............. select '%d'\n", stateStr[i], i + 1);
 	printf("--------------------------\n\n");
 	printf("Select an option: ");
 }

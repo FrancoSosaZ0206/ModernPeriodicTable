@@ -15,7 +15,8 @@ typedef enum elemAttribute
 	Symbol,		// Chemical Symbol
 	AtomicNum,	// Atomic Number
 	Mass,		// Atomic Mass
-	Type,		// Element Type or Property (see Element.h)
+	MajorCtg,	// Element Major Category or Property (see Element.h)
+	MinorCtg,	// Element Minor or Property (see Element.h)
 	State		// Aggregation State (see Element.h)
 } elemAttribute;
 

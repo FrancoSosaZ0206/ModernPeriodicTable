@@ -1,2 +1,2 @@
-- Change show selection from Ptable to List, so that it doesn't order selected elements, and instead keeps them
-	in the order the user selected them.
+1. Implement future improvement 8.
+2. Add "unknown properties" as a new element type, given some elements have this.

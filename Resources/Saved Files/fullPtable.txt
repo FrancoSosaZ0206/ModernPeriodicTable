@@ -57,7 +57,7 @@ PERIODIC TABLE (118 Elements)
 	Symbol: B
 	Atomic Number: 5
 	Atomic Mass: 10.810000
-	Type: Semimetals (4)
+	Type: Metalloids (4)
 	State: Solid (2)
 
 .....................................
@@ -165,7 +165,7 @@ PERIODIC TABLE (118 Elements)
 	Symbol: Si
 	Atomic Number: 14
 	Atomic Mass: 28.084999
-	Type: Semimetals (4)
+	Type: Metalloids (4)
 	State: Solid (2)
 
 .....................................
@@ -381,7 +381,7 @@ PERIODIC TABLE (118 Elements)
 	Symbol: Ge
 	Atomic Number: 32
 	Atomic Mass: 72.629997
-	Type: Semimetals (4)
+	Type: Metalloids (4)
 	State: Solid (2)
 
 .....................................
@@ -393,7 +393,7 @@ PERIODIC TABLE (118 Elements)
 	Symbol: As
 	Atomic Number: 33
 	Atomic Mass: 72.921997
-	Type: Semimetals (4)
+	Type: Metalloids (4)
 	State: Solid (2)
 
 .....................................
@@ -609,7 +609,7 @@ PERIODIC TABLE (118 Elements)
 	Symbol: Sb
 	Atomic Number: 51
 	Atomic Mass: 121.760002
-	Type: Semimetals (4)
+	Type: Metalloids (4)
 	State: Solid (2)
 
 .....................................
@@ -621,7 +621,7 @@ PERIODIC TABLE (118 Elements)
 	Symbol: Te
 	Atomic Number: 52
 	Atomic Mass: 127.599998
-	Type: Semimetals (4)
+	Type: Metalloids (4)
 	State: Solid (2)
 
 .....................................
@@ -1005,7 +1005,7 @@ PERIODIC TABLE (118 Elements)
 	Symbol: Po
 	Atomic Number: 84
 	Atomic Mass: 210.000000
-	Type: Semimetals (4)
+	Type: Metalloids (4)
 	State: Solid (2)
 
 .....................................

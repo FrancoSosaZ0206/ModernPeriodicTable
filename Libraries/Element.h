@@ -5,21 +5,27 @@
 
 typedef struct Element Element;
 
-typedef enum elemType
+// Element categories:
+typedef enum majorCtg
 {
-	NobleGases,
-	AlkaliMetals,
-	AlkaliEarthMetals,
-	TransitionMetals,
-	Semimetals,
+	Metals,
 	NonMetals,
-	OtherMetals,
-	Lanthanides,
-	Actinides,
+	Metalloids,
+	UNKNOWN
+} majorCtg;
+typedef enum minorCtg
+{
+	Alkali,
+	AlkaliEarth,
+	Transition,
+	PostTransition,
 	Halogens,
-	Antigens
-} elemType;
+	NobleGases,
+	Lanthanides,
+	Actinides
+} minorCtg;
 
+// Element states of aggregation:
 typedef enum elemState
 {
 	Gas,
@@ -36,7 +42,8 @@ typedef enum elemState
 Element* newElement(int group, int period,
 					char* name, char symbol[4],
 					int atomicNum, float mass,
-					elemType, elemState // of aggregation
+					majorCtg, minorCtg, // ctg = category
+					elemState // of aggregation
 				   );
 
 void delElement(Element**);
@@ -50,7 +57,8 @@ void setElementName		(Element*, char*);
 void setElementSymbol	(Element*, char[4]);
 void setElementAtomicNum(Element*, int);
 void setElementMass		(Element*, float);
-void setElementType		(Element*, elemType);
+void setElementMajorCtg(Element*, majorCtg);
+void setElementMinorCtg(Element*, minorCtg);
 void setElementState	(Element*, elemState);
 
 // Getters
@@ -61,7 +69,8 @@ char*		getElementName		(Element*);
 char*		getElementSymbol	(Element*);
 int			getElementAtomicNum	(Element*);
 float		getElementMass		(Element*);
-elemType	getElementType		(Element*);
+majorCtg	getElementMajorCtg	(Element*);
+minorCtg	getElementMinorCtg	(Element*);
 elemState	getElementState		(Element*);
 
 // Printing
@@ -78,10 +87,14 @@ void serializeElement(Element*, FILE*);
 // Assumes file exists and is already open in read mode
 Element* deserializeElement(FILE*);
 
-void showElementTypes();
+/* Modes:
+	1. Shows all categories.
+	2. Major categories only.
+	3. Minor categories only. */
+void showElementCategories(int mode);
 void showElementStates();
 
-void elementTypes_Menu();
+void elementCategories_Menu();
 void elementStates_Menu();
 
 

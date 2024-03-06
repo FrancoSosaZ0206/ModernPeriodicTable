@@ -32,7 +32,7 @@ ELEMENT PROPERTIES:
 		- halogen,
 		- actinide,
 		- lanthanide,
-		- antigen,
+		- amphigen,
 	- state of aggregation (represented by color)
 		- gas,
 		- liquid,
