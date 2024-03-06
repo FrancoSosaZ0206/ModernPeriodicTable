@@ -333,7 +333,7 @@ int main()
 								{
 									elemState eState = -1;
 									printf("FIND ELEMENT BY STATE OF AGGREGATION\n\n");
-									showElementTypes();
+									showElementStates();
 									printf("Insert target element's state of aggregation: ");
 									scanf("%d", &eState);
 									clrBuffer();
@@ -467,7 +467,7 @@ int main()
 
 												do
 												{
-													showElementCatergories(2);
+													showElementCategories(2);
 													printf("Select new major category: ");
 													scanf("%d", &newMajorOp);
 													clrBuffer();
@@ -488,7 +488,7 @@ int main()
 
 												do
 												{
-													showElementCatergories(3);
+													showElementCategories(3);
 													printf("NONE ............. -1\n");
 													printf("**************************\n\n");
 													printf("Select new minor category: ");
@@ -674,7 +674,7 @@ int main()
 								{
 									elemState eState = -1;
 									printf("SELECT ELEMENT BY STATE OF AGGREGATION\n\n");
-									showElementTypes();
+									showElementStates();
 									printf("Insert target element's state of aggregation: ");
 									scanf("%d", &eState);
 									clrBuffer();
